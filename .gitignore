@@ -1,0 +1,16 @@
+.Rhistory
+.RData
+.Rproj.user
+.RDataTmp
+
+# Quarto build & render outputs
+.quarto/
+/.quarto/
+_freeze/
+*_files/
+*_cache/
+_site/
+_book/
+*.html
+**/*.quarto_ipynb
+

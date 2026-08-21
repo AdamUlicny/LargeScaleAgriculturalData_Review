@@ -1,0 +1,634 @@
+---
+title: "Network Plots"
+format: html
+---
+
+## Setup
+
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(igraph)
+library(ggraph)
+library(tidygraph)
+library(here)
+
+# Load theme configuration
+source(here("R", "theme_config.R"))
+
+# Tuning knobs
+MIN_LABEL_DEG_SOURCE <- 1L
+MIN_LABEL_DEG_DATASET <- 1L
+```
+
+## Data Loading
+
+```{r load-processed-data}
+# Load resolved lineage links computed in 01_data_prep.qmd
+links <- read_csv(here("data", "processed", "network_links.csv"), show_col_types = FALSE) |>
+  mutate(dataset_group = factor(dataset_group, levels = names(category_colors)))
+
+if (nrow(links) == 0) {
+  stop("No lineage links found. Run 01_data_prep.qmd first.")
+}
+```
+
+## Node and Graph Construction
+
+```{r graph-construction}
+# Build source and dataset leaf nodes
+source_nodes <- links |>
+  distinct(input_type, source) |>
+  arrange(input_type, source) |>
+  mutate(
+    node_id = paste0("src::", input_type, "::", source),
+    label = source,
+    node_kind = "source"
+  )
+
+dataset_nodes <- links |>
+  distinct(dataset, dataset_group) |>
+  arrange(dataset_group, dataset) |>
+  mutate(
+    node_id = paste0("ds::", dataset),
+    label = dataset,
+    node_kind = "dataset"
+  )
+
+# Connection edges (lineage links to bundle)
+conn_edges <- links |>
+  left_join(source_nodes |> select(input_type, source, from = node_id), by = c("input_type", "source")) |>
+  left_join(dataset_nodes |> select(dataset, to = node_id), by = "dataset") |>
+  distinct(from, to, input_type)
+
+# Hierarchy tree for edge bundling
+hier_edges <- list()
+vertices <- list()
+
+vertices[[length(vertices) + 1]] <- tibble(
+  name = "branch::inputs", node_kind = "branch", input_type = NA_character_,
+  dataset_group = NA_character_, label = "Inputs", is_leaf = FALSE
+)
+
+vertices[[length(vertices) + 1]] <- tibble(
+  name = "branch::datasets", node_kind = "branch", input_type = NA_character_,
+  dataset_group = NA_character_, label = "Datasets", is_leaf = FALSE
+)
+
+# Connect top branches
+hier_edges[[length(hier_edges) + 1]] <- tibble(from = "branch::inputs", to = "branch::datasets")
+
+dataset_groups <- dataset_nodes |>
+  distinct(dataset_group) |>
+  arrange(dataset_group) |>
+  pull(dataset_group)
+
+for (grp in dataset_groups) {
+  grp_id <- paste0("dgroup::", grp)
+  vertices[[length(vertices) + 1]] <- tibble(
+    name = grp_id, node_kind = "branch", input_type = NA_character_,
+    dataset_group = grp, label = grp, is_leaf = FALSE
+  )
+  hier_edges[[length(hier_edges) + 1]] <- tibble(from = "branch::datasets", to = grp_id)
+
+  grp_sets <- dataset_nodes |> filter(dataset_group == grp)
+  for (i in seq_len(nrow(grp_sets))) {
+    hier_edges[[length(hier_edges) + 1]] <- tibble(from = grp_id, to = grp_sets$node_id[i])
+    vertices[[length(vertices) + 1]] <- tibble(
+      name = grp_sets$node_id[i], node_kind = "dataset", input_type = NA_character_,
+      dataset_group = grp, label = grp_sets$label[i], is_leaf = TRUE
+    )
+  }
+}
+
+for (tp in c("Remotely Sensed", "In Situ & Survey Data")) {
+  type_id <- paste0("type::", tp)
+  vertices[[length(vertices) + 1]] <- tibble(
+    name = type_id, node_kind = "branch", input_type = tp,
+    dataset_group = NA_character_, label = tp, is_leaf = FALSE
+  )
+  hier_edges[[length(hier_edges) + 1]] <- tibble(from = "branch::inputs", to = type_id)
+
+  type_sources <- source_nodes |> filter(input_type == tp)
+  if (nrow(type_sources) > 0) {
+    for (i in seq_len(nrow(type_sources))) {
+      hier_edges[[length(hier_edges) + 1]] <- tibble(from = type_id, to = type_sources$node_id[i])
+      vertices[[length(vertices) + 1]] <- tibble(
+        name = type_sources$node_id[i], node_kind = "source", input_type = tp,
+        dataset_group = NA_character_, label = type_sources$label[i], is_leaf = TRUE
+      )
+    }
+  }
+}
+
+hierarchy <- bind_rows(hier_edges)
+vertices_df <- bind_rows(vertices) |> distinct(name, .keep_all = TRUE)
+
+deg_tbl <- tibble(name = c(conn_edges$from, conn_edges$to)) |>
+  count(name, name = "degree")
+
+d_groups <- dataset_nodes |>
+  distinct(dataset_group) |>
+  pull()
+pal_ds <- category_colors[d_groups]
+pal_ds[is.na(pal_ds)] <- bundle_palette["node_default"]
+names(pal_ds) <- d_groups
+
+vertices_df <- vertices_df |>
+  left_join(deg_tbl, by = "name") |>
+  mutate(degree = replace_na(degree, 0L))
+
+# Create and activate tidygraph object
+tg <- tbl_graph(nodes = vertices_df, edges = hierarchy, directed = TRUE) |>
+  activate(nodes) |>
+  mutate(
+    node_color = case_when(
+      node_kind == "source" & input_type == "Remotely Sensed" ~ bundle_palette["Remotely Sensed"],
+      node_kind == "source" & input_type == "In Situ & Survey Data" ~ bundle_palette["In Situ & Survey Data"],
+      node_kind == "dataset" ~ pal_ds[dataset_group],
+      TRUE ~ bundle_palette["node_default"]
+    ),
+    pretty_label = case_when(
+      node_kind == "source" & degree >= MIN_LABEL_DEG_SOURCE ~ label,
+      node_kind == "dataset" & degree >= MIN_LABEL_DEG_DATASET ~ label,
+      TRUE ~ NA_character_
+    )
+  )
+```
+
+## Layout Adjustments
+
+```{r layout-adjustments}
+lay <- create_layout(tg, layout = "dendrogram", circular = TRUE)
+
+leaf_src <- lay |> filter(is_leaf & node_kind == "source")
+leaf_ds  <- lay |> filter(is_leaf & node_kind == "dataset")
+
+lay$angle <- NA_real_
+lay$angle[lay$name %in% leaf_ds$name]  <- seq(80, -80, length.out = nrow(leaf_ds))
+lay$angle[lay$name %in% leaf_src$name] <- seq(100, 260, length.out = nrow(leaf_src))
+
+r <- max(sqrt(lay$x^2 + lay$y^2), na.rm = TRUE)
+
+lay <- lay |>
+  mutate(
+    x = if_else(is_leaf, r * cos(angle * pi / 180), x),
+    y = if_else(is_leaf, r * sin(angle * pi / 180), y),
+    label_angle = if_else(angle > 90 & angle < 270, angle + 180, angle),
+    hjust = if_else(angle > 90 & angle < 270, 1, 0)
+  )
+
+# Internal dataset group branches
+grp_nodes <- lay |> filter(!is_leaf & str_starts(name, "dgroup::"))
+if (nrow(grp_nodes) > 0) {
+  for (i in seq_len(nrow(grp_nodes))) {
+    nm <- grp_nodes$name[i]
+    child_names <- lay |> filter(dataset_group == grp_nodes$dataset_group[i] & is_leaf) |> pull(name)
+    child_angs <- lay |> filter(name %in% child_names) |> pull(angle)
+    avg_ang <- mean(child_angs)
+
+    r_branch <- r * 0.70
+    lay$x[lay$name == nm] <- r_branch * cos(avg_ang * pi / 180)
+    lay$y[lay$name == nm] <- r_branch * sin(avg_ang * pi / 180)
+    lay$angle[lay$name == nm] <- avg_ang
+
+    tangent_ang <- (avg_ang - 90) %% 360
+    if (tangent_ang > 90 && tangent_ang < 270) tangent_ang <- tangent_ang - 180
+    lay$label_angle[lay$name == nm] <- tangent_ang
+    lay$hjust[lay$name == nm] <- 0.5
+  }
+}
+
+# Input sub-branches
+input_nodes <- lay |> filter(!is_leaf & str_starts(name, "type::"))
+if (nrow(input_nodes) > 0) {
+  for (i in seq_len(nrow(input_nodes))) {
+    nm <- input_nodes$name[i]
+    child_names <- lay |> filter(input_type == input_nodes$input_type[i] & is_leaf) |> pull(name)
+    child_angs <- lay |> filter(name %in% child_names) |> pull(angle)
+    avg_ang <- mean(child_angs)
+
+    r_branch <- r * 0.70
+    lay$x[lay$name == nm] <- r_branch * cos(avg_ang * pi / 180)
+    lay$y[lay$name == nm] <- r_branch * sin(avg_ang * pi / 180)
+    lay$angle[lay$name == nm] <- avg_ang
+
+    tangent_ang <- (avg_ang - 90) %% 360
+    if (tangent_ang > 90 && tangent_ang < 270) tangent_ang <- tangent_ang - 180
+    lay$label_angle[lay$name == nm] <- tangent_ang
+    lay$hjust[lay$name == nm] <- 0.5
+  }
+}
+
+wideness <- r * 0.40
+lay$x[lay$name == "branch::inputs"]   <- wideness * cos(180 * pi / 180)
+lay$y[lay$name == "branch::inputs"]   <- 0
+lay$x[lay$name == "branch::datasets"] <- wideness * cos(0 * pi / 180)
+lay$y[lay$name == "branch::datasets"] <- 0
+
+from_idx <- match(conn_edges$from, igraph::V(tg)$name)
+to_idx   <- match(conn_edges$to, igraph::V(tg)$name)
+
+idx_remote <- which(conn_edges$input_type == "Remotely Sensed")
+idx_stat   <- which(conn_edges$input_type == "In Situ & Survey Data")
+```
+
+## Render Network Plot
+
+```{r plot-network, fig.width=16, fig.height=14}
+p <- ggraph(lay) +
+  geom_conn_bundle(
+    data = get_con(from = from_idx[idx_remote], to = to_idx[idx_remote]),
+    color = bundle_palette["Remotely Sensed"], alpha = 0.4, linewidth = 0.7, tension = 0.8
+  ) +
+  geom_conn_bundle(
+    data = get_con(from = from_idx[idx_stat], to = to_idx[idx_stat]),
+    color = bundle_palette["In Situ & Survey Data"], alpha = 0.4, linewidth = 0.7, tension = 0.8
+  ) +
+  geom_node_point(
+    aes(filter = is_leaf, size = degree, color = I(node_color)),
+    alpha = 0.95
+  ) +
+  geom_node_text(
+    aes(
+      x = r * 1.55 * cos(angle * pi / 180),
+      y = r * 1.55 * sin(angle * pi / 180),
+      filter = !is_leaf & (str_starts(name, "dgroup::") | str_starts(name, "type::")),
+      label = label, angle = label_angle, hjust = hjust
+    ),
+    size = 3.5, fontface = "bold", color = bundle_palette["text_dark"], family = "sans"
+  ) +
+  geom_node_text(
+    aes(
+      x = x * 1.04, y = y * 1.04,
+      filter = is_leaf & !is.na(pretty_label),
+      label = pretty_label, angle = label_angle, hjust = hjust, color = I(node_color)
+    ),
+    size = 3.2, family = "sans", fontface = "bold"
+  ) +
+  scale_size_continuous(range = c(2.0, 9.0), breaks = c(2, 5, 10, 20), name = "Connections") +
+  coord_fixed(clip = "off", xlim = c(-1.85, 1.85), ylim = c(-1.85, 1.85)) +
+  theme_publication()
+
+p
+```
+
+## Experimental Network Plot (Grouped by inputGroup)
+
+```{r experimental-network, fig.width=16, fig.height=14}
+inputs_df <- read_excel(here("agri_data_review.xlsx"), sheet = "Inputs") |>
+  select(source = inputName, inputGroup) |>
+  distinct()
+
+links_exp <- links |>
+  left_join(inputs_df, by = "source") |>
+  mutate(source = if_else(!is.na(inputGroup), inputGroup, source)) |>
+  distinct(dataset, input_type, source, dataset_group)
+
+source_nodes_exp <- links_exp |>
+  distinct(input_type, source) |>
+  arrange(input_type, source) |>
+  mutate(
+    node_id = paste0("src::", input_type, "::", source),
+    label = source,
+    node_kind = "source"
+  )
+
+dataset_nodes_exp <- links_exp |>
+  distinct(dataset, dataset_group) |>
+  arrange(dataset_group, dataset) |>
+  mutate(
+    node_id = paste0("ds::", dataset),
+    label = dataset,
+    node_kind = "dataset"
+  )
+
+conn_edges_exp <- links_exp |>
+  left_join(source_nodes_exp |> select(input_type, source, from = node_id), by = c("input_type", "source")) |>
+  left_join(dataset_nodes_exp |> select(dataset, to = node_id), by = "dataset") |>
+  distinct(from, to, input_type)
+
+hier_edges_exp <- list()
+vertices_exp   <- list()
+
+vertices_exp[[1]] <- tibble(name = "branch::inputs", node_kind = "branch", input_type = NA_character_, dataset_group = NA_character_, label = "Inputs", is_leaf = FALSE)
+vertices_exp[[2]] <- tibble(name = "branch::datasets", node_kind = "branch", input_type = NA_character_, dataset_group = NA_character_, label = "Datasets", is_leaf = FALSE)
+hier_edges_exp[[1]] <- tibble(from = "branch::inputs", to = "branch::datasets")
+
+dataset_groups_exp <- dataset_nodes_exp |> distinct(dataset_group) |> arrange(dataset_group) |> pull(dataset_group)
+
+for (grp in dataset_groups_exp) {
+  grp_id <- paste0("dgroup::", grp)
+  vertices_exp[[length(vertices_exp) + 1]] <- tibble(name = grp_id, node_kind = "branch", input_type = NA_character_, dataset_group = grp, label = grp, is_leaf = FALSE)
+  hier_edges_exp[[length(hier_edges_exp) + 1]] <- tibble(from = "branch::datasets", to = grp_id)
+
+  grp_sets <- dataset_nodes_exp |> filter(dataset_group == grp)
+  for (i in seq_len(nrow(grp_sets))) {
+    hier_edges_exp[[length(hier_edges_exp) + 1]] <- tibble(from = grp_id, to = grp_sets$node_id[i])
+    vertices_exp[[length(vertices_exp) + 1]] <- tibble(name = grp_sets$node_id[i], node_kind = "dataset", input_type = NA_character_, dataset_group = grp, label = grp_sets$label[i], is_leaf = TRUE)
+  }
+}
+
+for (tp in c("Remotely Sensed", "In Situ & Survey Data")) {
+  type_id <- paste0("type::", tp)
+  vertices_exp[[length(vertices_exp) + 1]] <- tibble(name = type_id, node_kind = "branch", input_type = tp, dataset_group = NA_character_, label = tp, is_leaf = FALSE)
+  hier_edges_exp[[length(hier_edges_exp) + 1]] <- tibble(from = "branch::inputs", to = type_id)
+
+  type_sources <- source_nodes_exp |> filter(input_type == tp)
+  if (nrow(type_sources) > 0) {
+    for (i in seq_len(nrow(type_sources))) {
+      hier_edges_exp[[length(hier_edges_exp) + 1]] <- tibble(from = type_id, to = type_sources$node_id[i])
+      vertices_exp[[length(vertices_exp) + 1]] <- tibble(name = type_sources$node_id[i], node_kind = "source", input_type = tp, dataset_group = NA_character_, label = type_sources$label[i], is_leaf = TRUE)
+    }
+  }
+}
+
+hierarchy_exp   <- bind_rows(hier_edges_exp)
+vertices_df_exp <- bind_rows(vertices_exp) |> distinct(name, .keep_all = TRUE)
+
+deg_tbl_exp <- tibble(name = c(conn_edges_exp$from, conn_edges_exp$to)) |> count(name, name = "degree")
+vertices_df_exp <- vertices_df_exp |> left_join(deg_tbl_exp, by = "name") |> mutate(degree = replace_na(degree, 0L))
+
+tg_exp <- tbl_graph(nodes = vertices_df_exp, edges = hierarchy_exp, directed = TRUE) |>
+  activate(nodes) |>
+  mutate(
+    node_color = case_when(
+      node_kind == "source" & input_type == "Remotely Sensed" ~ bundle_palette["Remotely Sensed"],
+      node_kind == "source" & input_type == "In Situ & Survey Data" ~ bundle_palette["In Situ & Survey Data"],
+      node_kind == "dataset" ~ pal_ds[dataset_group],
+      TRUE ~ bundle_palette["node_default"]
+    ),
+    pretty_label = case_when(
+      node_kind == "source" & degree >= MIN_LABEL_DEG_SOURCE ~ label,
+      node_kind == "dataset" & degree >= MIN_LABEL_DEG_DATASET ~ label,
+      TRUE ~ NA_character_
+    )
+  )
+
+lay_exp <- create_layout(tg_exp, layout = "dendrogram", circular = TRUE)
+leaf_src_exp <- lay_exp |> filter(is_leaf & node_kind == "source")
+leaf_ds_exp  <- lay_exp |> filter(is_leaf & node_kind == "dataset")
+
+lay_exp$angle <- NA_real_
+lay_exp$angle[lay_exp$name %in% leaf_ds_exp$name]  <- seq(80, -80, length.out = nrow(leaf_ds_exp))
+lay_exp$angle[lay_exp$name %in% leaf_src_exp$name] <- seq(100, 260, length.out = nrow(leaf_src_exp))
+
+r_exp <- max(sqrt(lay_exp$x^2 + lay_exp$y^2), na.rm = TRUE)
+
+lay_exp <- lay_exp |>
+  mutate(
+    x = if_else(is_leaf, r_exp * cos(angle * pi / 180), x),
+    y = if_else(is_leaf, r_exp * sin(angle * pi / 180), y),
+    label_angle = if_else(angle > 90 & angle < 270, angle + 180, angle),
+    hjust = if_else(angle > 90 & angle < 270, 1, 0)
+  )
+
+grp_nodes_exp <- lay_exp |> filter(!is_leaf & str_starts(name, "dgroup::"))
+if (nrow(grp_nodes_exp) > 0) {
+  for (i in seq_len(nrow(grp_nodes_exp))) {
+    nm <- grp_nodes_exp$name[i]
+    child_names <- lay_exp |> filter(dataset_group == grp_nodes_exp$dataset_group[i] & is_leaf) |> pull(name)
+    child_angs <- lay_exp |> filter(name %in% child_names) |> pull(angle)
+    avg_ang <- mean(child_angs)
+
+    r_branch <- r_exp * 0.70
+    lay_exp$x[lay_exp$name == nm] <- r_branch * cos(avg_ang * pi / 180)
+    lay_exp$y[lay_exp$name == nm] <- r_branch * sin(avg_ang * pi / 180)
+    lay_exp$angle[lay_exp$name == nm] <- avg_ang
+
+    tangent_ang <- (avg_ang - 90) %% 360
+    if (tangent_ang > 90 && tangent_ang < 270) tangent_ang <- tangent_ang - 180
+    lay_exp$label_angle[lay_exp$name == nm] <- tangent_ang
+    lay_exp$hjust[lay_exp$name == nm] <- 0.5
+  }
+}
+
+input_nodes_exp <- lay_exp |> filter(!is_leaf & str_starts(name, "type::"))
+if (nrow(input_nodes_exp) > 0) {
+  for (i in seq_len(nrow(input_nodes_exp))) {
+    nm <- input_nodes_exp$name[i]
+    child_names <- lay_exp |> filter(input_type == input_nodes_exp$input_type[i] & is_leaf) |> pull(name)
+    child_angs <- lay_exp |> filter(name %in% child_names) |> pull(angle)
+    avg_ang <- mean(child_angs)
+
+    r_branch <- r_exp * 0.70
+    lay_exp$x[lay_exp$name == nm] <- r_branch * cos(avg_ang * pi / 180)
+    lay_exp$y[lay_exp$name == nm] <- r_branch * sin(avg_ang * pi / 180)
+    lay_exp$angle[lay_exp$name == nm] <- avg_ang
+
+    tangent_ang <- (avg_ang - 90) %% 360
+    if (tangent_ang > 90 && tangent_ang < 270) tangent_ang <- tangent_ang - 180
+    lay_exp$label_angle[lay_exp$name == nm] <- tangent_ang
+    lay_exp$hjust[lay_exp$name == nm] <- 0.5
+  }
+}
+
+wideness_exp <- r_exp * 0.40
+lay_exp$x[lay_exp$name == "branch::inputs"]   <- wideness_exp * cos(180 * pi / 180)
+lay_exp$y[lay_exp$name == "branch::inputs"]   <- 0
+lay_exp$x[lay_exp$name == "branch::datasets"] <- wideness_exp * cos(0 * pi / 180)
+lay_exp$y[lay_exp$name == "branch::datasets"] <- 0
+
+from_idx_exp   <- match(conn_edges_exp$from, igraph::V(tg_exp)$name)
+to_idx_exp     <- match(conn_edges_exp$to, igraph::V(tg_exp)$name)
+idx_remote_exp <- which(conn_edges_exp$input_type == "Remotely Sensed")
+idx_stat_exp   <- which(conn_edges_exp$input_type == "In Situ & Survey Data")
+
+p_exp <- ggraph(lay_exp) +
+  geom_conn_bundle(
+    data = get_con(from = from_idx_exp[idx_remote_exp], to = to_idx_exp[idx_remote_exp]),
+    color = bundle_palette["Remotely Sensed"], alpha = 0.4, linewidth = 0.7, tension = 0.8
+  ) +
+  geom_conn_bundle(
+    data = get_con(from = from_idx_exp[idx_stat_exp], to = to_idx_exp[idx_stat_exp]),
+    color = bundle_palette["In Situ & Survey Data"], alpha = 0.4, linewidth = 0.7, tension = 0.8
+  ) +
+  geom_node_point(
+    aes(filter = is_leaf, size = degree, color = I(node_color)),
+    alpha = 0.95
+  ) +
+  geom_node_text(
+    aes(
+      x = r_exp * 1.75 * cos(angle * pi / 180),
+      y = r_exp * 1.75 * sin(angle * pi / 180),
+      filter = !is_leaf & (str_starts(name, "dgroup::") | str_starts(name, "type::")),
+      label = label, angle = label_angle, hjust = hjust
+    ),
+    size = 3.5, fontface = "bold", color = bundle_palette["text_dark"], family = "sans"
+  ) +
+  geom_node_text(
+    aes(
+      x = x * 1.04, y = y * 1.04,
+      filter = is_leaf & !is.na(pretty_label),
+      label = pretty_label, angle = label_angle, hjust = hjust, color = I(node_color)
+    ),
+    size = 3.2, family = "sans", fontface = "bold"
+  ) +
+  scale_size_continuous(range = c(2.0, 9.0), breaks = c(2, 5, 10, 20), name = "Connections") +
+  coord_fixed(clip = "off", xlim = c(-1.85, 1.85), ylim = c(-1.85, 1.85)) +
+  theme_publication()
+
+p_exp
+```
+
+## Save Outputs
+
+```{r save-outputs}
+dir.create(here("outputs", "figures"), recursive = TRUE, showWarnings = FALSE)
+
+ggsave(
+  here("outputs", "figures", "edge_bundling_input_types.pdf"),
+  p, width = 16, height = 14, device = cairo_pdf, bg = "white"
+)
+
+ggsave(
+  here("outputs", "figures", "edge_bundling_input_types.png"),
+  p, width = 14, height = 14, bg = "white"
+)
+
+ggsave(
+  here("outputs", "figures", "edge_bundling_input_groups.png"),
+  p_exp, width = 14, height = 14, bg = "white"
+)
+```
+
+## Dataset Network Connectivity
+
+```{r network-connectivity}
+library(knitr)
+
+raw_network <- read_excel(here("agri_data_review.xlsx"), sheet = "Sorted") |>
+  mutate(nameShort = str_squish(nameShort)) |>
+  filter(!is.na(nameShort), nameShort != "") |>
+  select(target = nameShort, inputMap, inputRemote, inputStat) |>
+  pivot_longer(
+    cols = c(inputMap, inputRemote, inputStat),
+    names_to = "input_field",
+    values_to = "source"
+  ) |>
+  filter(!is.na(source), source != "") |>
+  separate_rows(source, sep = "[,;]") |>
+  mutate(source = str_squish(source)) |>
+  filter(source != "", source != "?") |>
+  distinct(target, source, input_field)
+
+out_degree <- raw_network |>
+  count(source, name = "Out_Degree") |>
+  arrange(desc(Out_Degree)) |>
+  slice_head(n = 15)
+
+kable(out_degree, caption = "Top 15 Most Connected Inputs (Highest Out-Degree)")
+
+out_degree_grouped <- raw_network |>
+  left_join(inputs_df, by = "source") |>
+  mutate(source = if_else(!is.na(inputGroup), inputGroup, source)) |>
+  count(source, name = "Out_Degree") |>
+  arrange(desc(Out_Degree)) |>
+  slice_head(n = 15)
+
+kable(out_degree_grouped, caption = "Top 15 Most Connected Inputs (Grouped by Input Family)")
+
+in_degree <- raw_network |>
+  count(target, name = "In_Degree") |>
+  arrange(desc(In_Degree)) |>
+  slice_head(n = 15)
+
+kable(in_degree, caption = "Top 15 Most Informed Datasets (Highest In-Degree)")
+```
+
+## Manuscript Figure Statistics
+
+```{r manuscript-stats}
+overall_proportions <- links |>
+  group_by(input_type) |>
+  summarise(Total_Links = n(), Unique_Sources = n_distinct(source)) |>
+  mutate(Percentage_of_Links = round((Total_Links / sum(Total_Links)) * 100, 1))
+
+kable(overall_proportions, caption = "Global Overview of Remote vs. Statistical Inputs")
+
+source_importance <- links |>
+  group_by(input_type, source) |>
+  summarise(Datasets_Supported = n_distinct(dataset), .groups = "drop") |>
+  arrange(desc(Datasets_Supported)) |>
+  slice_head(n = 15)
+
+kable(source_importance, caption = "Top 15 Most Utilized Data Sources by Downstream Datasets")
+
+source_importance_grouped <- links |>
+  left_join(inputs_df, by = "source") |>
+  mutate(source = if_else(!is.na(inputGroup), inputGroup, source)) |>
+  group_by(input_type, source) |>
+  summarise(Datasets_Supported = n_distinct(dataset), .groups = "drop") |>
+  arrange(desc(Datasets_Supported)) |>
+  slice_head(n = 15)
+
+kable(source_importance_grouped, caption = "Top 15 Most Utilized Data Sources by Downstream Datasets (Grouped)")
+
+median_inputs <- links |>
+  count(dataset, name = "n_inputs") |>
+  summarise(
+    Median_Inputs = median(n_inputs),
+    Mean_Inputs   = round(mean(n_inputs), 1),
+    Max_Inputs    = max(n_inputs),
+    Min_Inputs    = min(n_inputs)
+  )
+
+kable(median_inputs, caption = "Summary of Inputs per Dataset")
+
+metric_proportions <- links |>
+  group_by(dataset_group, input_type) |>
+  summarise(Links = n(), .groups = "drop_last") |>
+  mutate(
+    Total_Metric_Links = sum(Links),
+    Percentage = round((Links / Total_Metric_Links) * 100, 1)
+  ) |>
+  ungroup() |>
+  arrange(dataset_group, input_type)
+
+kable(metric_proportions, caption = "Proportion of Remote vs. Statistical Inputs per Metric")
+```
+
+## Visualize Input Proportions
+
+```{r plot-metric-proportions, fig.width=8, fig.height=5}
+library(scales)
+
+metric_order <- metric_proportions |>
+  select(dataset_group, input_type, Percentage) |>
+  pivot_wider(names_from = input_type, values_from = Percentage, values_fill = 0) |>
+  arrange(`Remotely Sensed`) |>
+  pull(dataset_group)
+
+p_prop <- metric_proportions |>
+  mutate(
+    dataset_group = factor(dataset_group, levels = metric_order),
+    input_type = factor(input_type, levels = c("In Situ & Survey Data", "Remotely Sensed"))
+  ) |>
+  ggplot(aes(x = Percentage, y = dataset_group, fill = input_type)) +
+  geom_col(width = 0.65) +
+  scale_fill_manual(
+    values = c("Remotely Sensed" = unname(bundle_palette["Remotely Sensed"]), "In Situ & Survey Data" = unname(bundle_palette["In Situ & Survey Data"])),
+    name = "Input Type",
+    breaks = c("Remotely Sensed", "In Situ & Survey Data")
+  ) +
+  scale_x_continuous(expand = c(0, 0)) +
+  labs(x = "Percentage of Total Dataset Connections (%)", y = "") +
+  theme_publication() +
+  theme(
+    axis.text.y = element_text(size = 11, face = "bold", color = "black"),
+    axis.text.x = element_text(size = 10, color = "black"),
+    axis.title.x = element_text(size = 12, face = "bold", margin = margin(t = 10)),
+    axis.title.y = element_text(size = 12, face = "bold", margin = margin(r = 10)),
+    legend.position = "top",
+    legend.justification = "center",
+    panel.grid.major.x = element_line(color = "grey90", linewidth = 0.5),
+    axis.line = element_line(color = "black")
+  )
+
+p_prop
+
+ggsave(
+  here("outputs", "figures", "metric_input_proportions.png"),
+  p_prop, width = 8, height = 5, bg = "white"
+)
+```

@@ -1,0 +1,24 @@
+project:
+  type: default
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false
+
+format:
+  html:
+    theme: cosmo
+    fig-width: 7
+    fig-height: 5
+    fig-format: retina
+  pdf:
+    documentclass: article
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fig-width: 6
+    fig-height: 4.5
+    fig-format: pdf

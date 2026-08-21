@@ -1,0 +1,439 @@
+dataset,input_type,source,dataset_group
+Canada ACI,Remotely Sensed,Landsat-5,Combined Agroecosystem
+Canada ACI,Remotely Sensed,RADARSAT-2,Combined Agroecosystem
+Canada ACI,Remotely Sensed,ResourceSat-2,Combined Agroecosystem
+EUCROPMAP,Remotely Sensed,Sentinel-1,Combined Agroecosystem
+EUCROPMAP,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+EUCROPMAP,In Situ & Survey Data,LUCAS,Combined Agroecosystem
+EUCROPMAP,In Situ & Survey Data,EUROSTAT,Combined Agroecosystem
+GCG 2006,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
+GCG 2006,In Situ & Survey Data,National Statistics,Combined Agroecosystem
+Farmland 2015,Remotely Sensed,MODIS,Combined Agroecosystem
+Farmland 2015,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
+Farmland 2015,In Situ & Survey Data,National Statistics,Combined Agroecosystem
+Farmland 2015,In Situ & Survey Data,EUROSTAT,Combined Agroecosystem
+USGS GFSAD30,Remotely Sensed,Landsat-7,Combined Agroecosystem
+USGS GFSAD30,Remotely Sensed,Landsat-8,Combined Agroecosystem
+USGS GFSAD30,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+USGS GFSAD30,Remotely Sensed,VHRI,Combined Agroecosystem
+LULC India,Remotely Sensed,Cartosat 2S,Combined Agroecosystem
+LULC India,Remotely Sensed,ResourceSat-1,Combined Agroecosystem
+LULC India,Remotely Sensed,ResourceSat-2,Combined Agroecosystem
+LULC India,Remotely Sensed,ResourceSat-2A,Combined Agroecosystem
+HILDA+,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
+China LC,Remotely Sensed,Landsat,Combined Agroecosystem
+LUH2,In Situ & Survey Data,MIAMI-LU,Combined Agroecosystem
+LUH2,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
+HYDE,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
+HYDE,In Situ & Survey Data,National Statistics,Combined Agroecosystem
+HYDE,In Situ & Survey Data,UN,Combined Agroecosystem
+HYDE,In Situ & Survey Data,WWF,Combined Agroecosystem
+HYDE,In Situ & Survey Data,NOAA-NGDC,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,AQUASTAT,Combined Agroecosystem
+MapBiomas,Remotely Sensed,Landsat,Combined Agroecosystem
+DEA LC,Remotely Sensed,Landsat-5,Combined Agroecosystem
+DEA LC,Remotely Sensed,Landsat-7,Combined Agroecosystem
+DEA LC,Remotely Sensed,Landsat-8,Combined Agroecosystem
+DEA LC,Remotely Sensed,Landsat-9,Combined Agroecosystem
+LULC India Decadal,Remotely Sensed,Landsat-5,Combined Agroecosystem
+LULC India Decadal,Remotely Sensed,IRS-1B,Combined Agroecosystem
+LULC India Decadal,Remotely Sensed,Landsat-4,Combined Agroecosystem
+DynamicWorld,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+USDA NASS CDL,Remotely Sensed,Landsat-5,Crops
+USDA NASS CDL,Remotely Sensed,Landsat-7,Crops
+USDA NASS CDL,Remotely Sensed,Landsat-8,Crops
+USDA NASS CDL,Remotely Sensed,Landsat-9,Crops
+USDA NASS CDL,Remotely Sensed,ResourceSat-1,Crops
+USDA NASS CDL,Remotely Sensed,ResourceSat-2,Crops
+USDA NASS CDL,Remotely Sensed,Deimos-1,Crops
+USDA NASS CDL,Remotely Sensed,UK-DMC-2,Crops
+USDA NASS CDL,Remotely Sensed,Sentinel-2,Crops
+USDA NASS CDL,In Situ & Survey Data,National Statistics,Crops
+WorldCereal,Remotely Sensed,Sentinel-1,Crops
+WorldCereal,Remotely Sensed,Sentinel-2,Crops
+WorldCereal,Remotely Sensed,Landsat-8,Crops
+WorldCereal,In Situ & Survey Data,AQUASTAT,Crops
+WorldCereal,In Situ & Survey Data,GEOGLAM,Crops
+WorldCereal,In Situ & Survey Data,AgERA5,Crops
+CROPGRIDS,In Situ & Survey Data,FAOSTAT,Crops
+CROPGRIDS,In Situ & Survey Data,National Statistics,Crops
+MRF 2000,Remotely Sensed,MODIS,Crops
+MRF 2000,In Situ & Survey Data,FAOSTAT,Crops
+MRF 2000,In Situ & Survey Data,National Statistics,Crops
+MRF 2000,In Situ & Survey Data,AgroMAPS,Crops
+EuroCrops,In Situ & Survey Data,National Statistics,Crops
+INTA,Remotely Sensed,Landsat,Crops
+INTA,Remotely Sensed,Sentinel-2,Crops
+SASAM-GC,In Situ & Survey Data,FAOSTAT,Crops
+Africa Cropland,Remotely Sensed,Sentinel-2,Crops
+Fallow Land EU,Remotely Sensed,Sentinel-2,Crops
+Fallow Land EU,In Situ & Survey Data,LUCAS,Crops
+Fallow Land EU,In Situ & Survey Data,GSAA,Crops
+Fallow Land EU,In Situ & Survey Data,EuroCrops,Crops
+GLAD GCC,Remotely Sensed,Landsat-ARD,Crops
+GLAD GCC,Remotely Sensed,MODIS,Crops
+Historical Cropland,In Situ & Survey Data,FAOSTAT,Crops
+Historical Cropland,In Situ & Survey Data,National Statistics,Crops
+Cultivated Tropics,Remotely Sensed,Sentinel-2,Crops
+SEA Cropland,Remotely Sensed,Sentinel-1,Crops
+SEA Cropland,Remotely Sensed,Sentinel-2,Crops
+SEA Cropland,Remotely Sensed,Copernicus DEM,Crops
+SEA Cropland,In Situ & Survey Data,FAOSTAT,Crops
+NPKGRIDS,In Situ & Survey Data,HFUBC,Fertilizer
+HFUBC,In Situ & Survey Data,FAOSTAT,Fertilizer
+HFUBC,In Situ & Survey Data,IFA,Fertilizer
+Global Nitrogen,In Situ & Survey Data,FAOSTAT,Fertilizer
+Global Nitrogen,In Situ & Survey Data,IFA,Fertilizer
+Global Nitrogen,In Situ & Survey Data,HFUBC,Fertilizer
+Global Nitrogen,In Situ & Survey Data,EUROSTAT,Fertilizer
+Global Nitrogen,In Situ & Survey Data,World Bank,Fertilizer
+Global Nitrogen,In Situ & Survey Data,CAMI,Fertilizer
+Global Nitrogen,In Situ & Survey Data,CTIC,Fertilizer
+Fertilizer Per-Crop,In Situ & Survey Data,HFUBC,Fertilizer
+Fertilizer Per-Crop,In Situ & Survey Data,USDA ERS,Fertilizer
+Fertilizer Per-Crop,In Situ & Survey Data,FAOSTAT,Fertilizer
+Fertilizer Per-Crop,In Situ & Survey Data,National Statistics,Fertilizer
+Zhang Nitrogen,In Situ & Survey Data,FAOSTAT,Fertilizer
+Zhang Nitrogen,In Situ & Survey Data,FertiStat,Fertilizer
+Zhang Nitrogen,In Situ & Survey Data,IFA,Fertilizer
+Zhang Nitrogen,In Situ & Survey Data,USDA,Fertilizer
+FAOSTAT Fertilizer,In Situ & Survey Data,FAOSTAT,Fertilizer
+FAOSTAT Nutrients,In Situ & Survey Data,FAOSTAT,Fertilizer
+Fertilizer and Manure,In Situ & Survey Data,HFUBC,Fertilizer
+Fertilizer and Manure,In Situ & Survey Data,FAOSTAT,Fertilizer
+Fertilizer and Manure,In Situ & Survey Data,OECD,Fertilizer
+EuropeAgriDB,In Situ & Survey Data,FAOSTAT,Fertilizer
+EuropeAgriDB,In Situ & Survey Data,EUROSTAT,Fertilizer
+EuropeAgriDB,In Situ & Survey Data,National Statistics,Fertilizer
+EuropeAgriDB,In Situ & Survey Data,IFA,Fertilizer
+Copernicus Grassland,Remotely Sensed,Sentinel-2,Grassland
+Copernicus Grassland,In Situ & Survey Data,LUCAS,Grassland
+Copernicus Grassland,In Situ & Survey Data,National Statistics,Grassland
+US Rangeland,Remotely Sensed,Landsat,Grassland
+GPW,Remotely Sensed,Landsat-ARD2,Grassland
+GPW,Remotely Sensed,MODIS,Grassland
+GPW,Remotely Sensed,VHRI,Grassland
+EU Irrigation,In Situ & Survey Data,EU,Intensity & Management
+Cropping Intensity,Remotely Sensed,Landsat-7,Intensity & Management
+Cropping Intensity,Remotely Sensed,Landsat-8,Intensity & Management
+Cropping Intensity,Remotely Sensed,Sentinel-2,Intensity & Management
+Cropping Intensity,Remotely Sensed,MODIS,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,VHRI,Intensity & Management
+China Intensity,Remotely Sensed,Sentinel-1,Intensity & Management
+China Intensity,Remotely Sensed,Sentinel-2,Intensity & Management
+Cropping Intensity Change,Remotely Sensed,MODIS,Intensity & Management
+US Field Size,Remotely Sensed,Landsat-5,Intensity & Management
+US Field Size,Remotely Sensed,Landsat-7,Intensity & Management
+FTW,Remotely Sensed,Sentinel-2,Intensity & Management
+Global Field Size,Remotely Sensed,MODIS,Intensity & Management
+EUROSTAT Farm Intensity,In Situ & Survey Data,EUROSTAT,Intensity & Management
+OECD Agro Indicators,In Situ & Survey Data,OECD,Intensity & Management
+OECD Agro Indicators,In Situ & Survey Data,EUROSTAT,Intensity & Management
+Productivity indices,In Situ & Survey Data,FAOSTAT,Intensity & Management
+Productivity indices,In Situ & Survey Data,National Statistics,Intensity & Management
+Farm Avg Size,In Situ & Survey Data,FAOSTAT,Intensity & Management
+Farm Avg Size,In Situ & Survey Data,National Statistics,Intensity & Management
+SPAM,Remotely Sensed,MODIS,Intensity & Management
+SPAM,In Situ & Survey Data,AgroMAPS,Intensity & Management
+SPAM,In Situ & Survey Data,AQUASTAT,Intensity & Management
+SPAM,In Situ & Survey Data,National Statistics,Intensity & Management
+MIRCA2000,In Situ & Survey Data,FAOSTAT,Intensity & Management
+MIRCA2000,In Situ & Survey Data,National Statistics,Intensity & Management
+EU Farm Statistics,In Situ & Survey Data,EUROSTAT,Intensity & Management
+GMIA,In Situ & Survey Data,AQUASTAT,Intensity & Management
+GMIA,In Situ & Survey Data,FAOSTAT,Intensity & Management
+GMIA,In Situ & Survey Data,World Bank,Intensity & Management
+GMIA,In Situ & Survey Data,National Statistics,Intensity & Management
+Copernicus Ploughing,Remotely Sensed,Sentinel-2,Intensity & Management
+EU Intensity Trend,In Situ & Survey Data,EUROSTAT,Intensity & Management
+MIrAD-US,Remotely Sensed,MODIS,Intensity & Management
+MIrAD-US,In Situ & Survey Data,USDA FSA CLU,Intensity & Management
+FAOSTAT Livestock,In Situ & Survey Data,FAOSTAT,Livestock
+EUROSTAT Livestock,In Situ & Survey Data,EUROSTAT,Livestock
+GLW,Remotely Sensed,MODIS,Livestock
+GLW,In Situ & Survey Data,FAOSTAT,Livestock
+GLW,In Situ & Survey Data,National Statistics,Livestock
+EU Livestock,In Situ & Survey Data,FAOSTAT,Livestock
+EU Livestock,In Situ & Survey Data,National Statistics,Livestock
+AGLW,Remotely Sensed,MODIS,Livestock
+AGLW,Remotely Sensed,NOAA AVHRR,Livestock
+AGLW,In Situ & Survey Data,FAOSTAT,Livestock
+AGLW,In Situ & Survey Data,National Statistics,Livestock
+EU Pesticides,In Situ & Survey Data,EU,Pesticide
+EU Pesticides,In Situ & Survey Data,FAOSTAT,Pesticide
+FAOSTAT Pesticide use,In Situ & Survey Data,FAOSTAT,Pesticide
+USGS PNSP,In Situ & Survey Data,USGS,Pesticide
+EUROSTAT Pesticide,In Situ & Survey Data,EUROSTAT,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,USGS PNSP,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,FAOSTAT,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,NASA/SEDAC,Pesticide
+GCG 2006,Remotely Sensed,SPOT-4,Combined Agroecosystem
+GCG 2006,Remotely Sensed,NOAA AVHRR,Combined Agroecosystem
+USGS GFSAD30,In Situ & Survey Data,FAO,Combined Agroecosystem
+HILDA+,Remotely Sensed,PROBA-V,Combined Agroecosystem
+HILDA+,Remotely Sensed,ENVISAT,Combined Agroecosystem
+HILDA+,Remotely Sensed,Sentinel-1,Combined Agroecosystem
+HILDA+,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+HILDA+,Remotely Sensed,MODIS,Combined Agroecosystem
+HILDA+,Remotely Sensed,NOAA-16,Combined Agroecosystem
+HILDA+,Remotely Sensed,NOAA AVHRR,Combined Agroecosystem
+HILDA+,Remotely Sensed,SPOT-4,Combined Agroecosystem
+HILDA+,In Situ & Survey Data,National Statistics,Combined Agroecosystem
+HILDA+,Remotely Sensed,Landsat-4,Combined Agroecosystem
+HILDA+,Remotely Sensed,Landsat-5,Combined Agroecosystem
+HILDA+,Remotely Sensed,Landsat-7,Combined Agroecosystem
+HILDA+,Remotely Sensed,HJ-1,Combined Agroecosystem
+HILDA+,Remotely Sensed,RADARSAT-2,Combined Agroecosystem
+HILDA+,Remotely Sensed,ResourceSat-2,Combined Agroecosystem
+HILDA+,Remotely Sensed,SPOT-5,Combined Agroecosystem
+HILDA+,Remotely Sensed,RapidEye,Combined Agroecosystem
+HILDA+,Remotely Sensed,Landsat-8,Combined Agroecosystem
+HILDA+,Remotely Sensed,Cartosat 2S,Combined Agroecosystem
+HILDA+,Remotely Sensed,ResourceSat-1,Combined Agroecosystem
+HILDA+,Remotely Sensed,ResourceSat-2A,Combined Agroecosystem
+China LC,Remotely Sensed,HJ-1A,Combined Agroecosystem
+China LC,Remotely Sensed,HJ-1B,Combined Agroecosystem
+China LC,Remotely Sensed,Landsat-5,Combined Agroecosystem
+China LC,Remotely Sensed,CBERS,Combined Agroecosystem
+LUH2,In Situ & Survey Data,National Statistics,Combined Agroecosystem
+LUH2,In Situ & Survey Data,UN,Combined Agroecosystem
+LUH2,In Situ & Survey Data,WWF,Combined Agroecosystem
+LUH2,In Situ & Survey Data,NOAA-NGDC,Combined Agroecosystem
+LUH2,Remotely Sensed,Landsat-4,Combined Agroecosystem
+LUH2,Remotely Sensed,Landsat-5,Combined Agroecosystem
+LUH2,Remotely Sensed,Landsat-7,Combined Agroecosystem
+LUH2,Remotely Sensed,MODIS,Combined Agroecosystem
+LUH2,In Situ & Survey Data,AgroMAPS,Combined Agroecosystem
+LUH2,Remotely Sensed,Landsat-8,Combined Agroecosystem
+LUH2,Remotely Sensed,Landsat-9,Combined Agroecosystem
+LUH2,Remotely Sensed,ResourceSat-1,Combined Agroecosystem
+LUH2,Remotely Sensed,ResourceSat-2,Combined Agroecosystem
+LUH2,Remotely Sensed,Deimos-1,Combined Agroecosystem
+LUH2,Remotely Sensed,UK-DMC-2,Combined Agroecosystem
+LUH2,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+LUH2,In Situ & Survey Data,FertiStat,Combined Agroecosystem
+LUH2,In Situ & Survey Data,IFA,Combined Agroecosystem
+LUH2,In Situ & Survey Data,USDA,Combined Agroecosystem
+HYDE,Remotely Sensed,ENVISAT,Combined Agroecosystem
+HYDE,Remotely Sensed,Sentinel-1,Combined Agroecosystem
+HYDE,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+HYDE,Remotely Sensed,Landsat,Combined Agroecosystem
+HYDE,In Situ & Survey Data,FAO,Combined Agroecosystem
+Anthromes,Remotely Sensed,NOAA AVHRR,Combined Agroecosystem
+Anthromes,Remotely Sensed,MODIS,Combined Agroecosystem
+Anthromes,Remotely Sensed,NOAA-14,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,National Statistics,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,UN,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,WWF,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,NOAA-NGDC,Combined Agroecosystem
+Anthromes,In Situ & Survey Data,AgroMAPS,Combined Agroecosystem
+USDA NASS CDL,Remotely Sensed,Lidar,Crops
+USDA NASS CDL,In Situ & Survey Data,USDA,Crops
+WorldCereal,In Situ & Survey Data,NASA,Crops
+WorldCereal,In Situ & Survey Data,EU,Crops
+WorldCereal,Remotely Sensed,Landsat-5,Crops
+WorldCereal,Remotely Sensed,Landsat-7,Crops
+WorldCereal,Remotely Sensed,Landsat-9,Crops
+WorldCereal,Remotely Sensed,ResourceSat-1,Crops
+WorldCereal,Remotely Sensed,ResourceSat-2,Crops
+WorldCereal,Remotely Sensed,Deimos-1,Crops
+WorldCereal,Remotely Sensed,UK-DMC-2,Crops
+WorldCereal,In Situ & Survey Data,National Statistics,Crops
+CROPGRIDS,Remotely Sensed,MODIS,Crops
+CROPGRIDS,In Situ & Survey Data,AgroMAPS,Crops
+CROPGRIDS,In Situ & Survey Data,AQUASTAT,Crops
+CROPGRIDS,In Situ & Survey Data,FAO,Crops
+CROPGRIDS,Remotely Sensed,Sentinel-1,Crops
+CROPGRIDS,Remotely Sensed,Sentinel-2,Crops
+CROPGRIDS,In Situ & Survey Data,LUCAS,Crops
+CROPGRIDS,In Situ & Survey Data,EUROSTAT,Crops
+CROPGRIDS,Remotely Sensed,Landsat-5,Crops
+CROPGRIDS,Remotely Sensed,Landsat-7,Crops
+CROPGRIDS,Remotely Sensed,Landsat-8,Crops
+CROPGRIDS,Remotely Sensed,Landsat-9,Crops
+CROPGRIDS,Remotely Sensed,ResourceSat-1,Crops
+CROPGRIDS,Remotely Sensed,ResourceSat-2,Crops
+CROPGRIDS,Remotely Sensed,Deimos-1,Crops
+CROPGRIDS,Remotely Sensed,UK-DMC-2,Crops
+CROPGRIDS,Remotely Sensed,RADARSAT-2,Crops
+MRF 2000,Remotely Sensed,SPOT-4,Crops
+AgroMAPS,In Situ & Survey Data,FAO,Crops
+SASAM-GC,Remotely Sensed,ENVISAT,Crops
+SASAM-GC,Remotely Sensed,Sentinel-1,Crops
+SASAM-GC,Remotely Sensed,Sentinel-2,Crops
+SASAM-GC,Remotely Sensed,HJ-1A,Crops
+SASAM-GC,Remotely Sensed,HJ-1B,Crops
+SASAM-GC,Remotely Sensed,Landsat-5,Crops
+SASAM-GC,Remotely Sensed,CBERS,Crops
+SASAM-GC,Remotely Sensed,Landsat-7,Crops
+SASAM-GC,Remotely Sensed,SPOT-4,Crops
+SASAM-GC,Remotely Sensed,SPOT-5,Crops
+SASAM-GC,Remotely Sensed,ResourceSat-2,Crops
+SASAM-GC,Remotely Sensed,RapidEye,Crops
+SASAM-GC,Remotely Sensed,Landsat-8,Crops
+Fallow Land EU,Remotely Sensed,Landsat-5,Crops
+Fallow Land EU,Remotely Sensed,Landsat-7,Crops
+Fallow Land EU,Remotely Sensed,SPOT-4,Crops
+Fallow Land EU,Remotely Sensed,SPOT-5,Crops
+Fallow Land EU,Remotely Sensed,ResourceSat-2,Crops
+Fallow Land EU,Remotely Sensed,RapidEye,Crops
+Fallow Land EU,Remotely Sensed,Landsat-8,Crops
+GLAD GCC,Remotely Sensed,Landsat-7,Crops
+GLAD GCC,Remotely Sensed,Landsat-8,Crops
+GLAD GCC,Remotely Sensed,Sentinel-2,Crops
+GLAD GCC,Remotely Sensed,VHRI,Crops
+Historical Cropland,Remotely Sensed,NOAA AVHRR,Crops
+Cultivated Tropics,Remotely Sensed,Landsat-4,Crops
+Cultivated Tropics,Remotely Sensed,Landsat-5,Crops
+Cultivated Tropics,Remotely Sensed,Landsat-7,Crops
+SEA Cropland,Remotely Sensed,Landsat-8,Crops
+SEA Cropland,Remotely Sensed,Landsat-9,Crops
+SEA Cropland,In Situ & Survey Data,GBIF,Crops
+NPKGRIDS,In Situ & Survey Data,FAOSTAT,Fertilizer
+NPKGRIDS,In Situ & Survey Data,National Statistics,Fertilizer
+NPKGRIDS,Remotely Sensed,MODIS,Fertilizer
+NPKGRIDS,In Situ & Survey Data,AgroMAPS,Fertilizer
+NPKGRIDS,In Situ & Survey Data,USDA ERS,Fertilizer
+Global Nitrogen,Remotely Sensed,MODIS,Fertilizer
+Global Nitrogen,In Situ & Survey Data,National Statistics,Fertilizer
+Global Nitrogen,In Situ & Survey Data,AgroMAPS,Fertilizer
+Global Nitrogen,In Situ & Survey Data,UN,Fertilizer
+Global Nitrogen,In Situ & Survey Data,WWF,Fertilizer
+Global Nitrogen,In Situ & Survey Data,NOAA-NGDC,Fertilizer
+Global Nitrogen,In Situ & Survey Data,AQUASTAT,Fertilizer
+Fertilizer Per-Crop,Remotely Sensed,MODIS,Fertilizer
+Fertilizer Per-Crop,In Situ & Survey Data,AgroMAPS,Fertilizer
+Zhang Nitrogen,Remotely Sensed,MODIS,Fertilizer
+Zhang Nitrogen,In Situ & Survey Data,National Statistics,Fertilizer
+Zhang Nitrogen,In Situ & Survey Data,AgroMAPS,Fertilizer
+Fertilizer and Manure,Remotely Sensed,MODIS,Fertilizer
+Fertilizer and Manure,In Situ & Survey Data,National Statistics,Fertilizer
+Fertilizer and Manure,In Situ & Survey Data,AgroMAPS,Fertilizer
+Copernicus Grassland,Remotely Sensed,Landsat-5,Grassland
+Copernicus Grassland,Remotely Sensed,Landsat-7,Grassland
+Copernicus Grassland,Remotely Sensed,SPOT-4,Grassland
+Copernicus Grassland,Remotely Sensed,SPOT-5,Grassland
+Copernicus Grassland,Remotely Sensed,ResourceSat-2,Grassland
+Copernicus Grassland,Remotely Sensed,RapidEye,Grassland
+Copernicus Grassland,Remotely Sensed,Landsat-8,Grassland
+Cropping Intensity,Remotely Sensed,Landsat-5,Intensity & Management
+Cropping Intensity,Remotely Sensed,Landsat-9,Intensity & Management
+Cropping Intensity,Remotely Sensed,ResourceSat-1,Intensity & Management
+Cropping Intensity,Remotely Sensed,ResourceSat-2,Intensity & Management
+Cropping Intensity,Remotely Sensed,Deimos-1,Intensity & Management
+Cropping Intensity,Remotely Sensed,UK-DMC-2,Intensity & Management
+Cropping Intensity,In Situ & Survey Data,National Statistics,Intensity & Management
+Cropping Intensity,Remotely Sensed,RADARSAT-2,Intensity & Management
+Cropping Intensity,Remotely Sensed,HJ-1A,Intensity & Management
+Cropping Intensity,Remotely Sensed,HJ-1B,Intensity & Management
+Cropping Intensity,Remotely Sensed,CBERS,Intensity & Management
+Cropping Intensity,Remotely Sensed,VHRI,Intensity & Management
+Cropping Intensity,Remotely Sensed,Landsat-4,Intensity & Management
+Cropping Intensity,In Situ & Survey Data,FAOSTAT,Intensity & Management
+Cropping Intensity,Remotely Sensed,Landsat,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,ENVISAT,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,Sentinel-1,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,Sentinel-2,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,Landsat-4,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,Landsat-5,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,Landsat-7,Intensity & Management
+Crowdsource Field Size,Remotely Sensed,HJ-1,Intensity & Management
+China Intensity,Remotely Sensed,ENVISAT,Intensity & Management
+China Intensity,Remotely Sensed,Landsat-4,Intensity & Management
+China Intensity,Remotely Sensed,Landsat-5,Intensity & Management
+China Intensity,Remotely Sensed,Landsat-7,Intensity & Management
+China Intensity,Remotely Sensed,MODIS,Intensity & Management
+China Intensity,In Situ & Survey Data,FAOSTAT,Intensity & Management
+Cropping Intensity Change,In Situ & Survey Data,FAOSTAT,Intensity & Management
+US Field Size,Remotely Sensed,Landsat-8,Intensity & Management
+US Field Size,Remotely Sensed,Landsat-9,Intensity & Management
+US Field Size,Remotely Sensed,ResourceSat-1,Intensity & Management
+US Field Size,Remotely Sensed,ResourceSat-2,Intensity & Management
+US Field Size,Remotely Sensed,Deimos-1,Intensity & Management
+US Field Size,Remotely Sensed,UK-DMC-2,Intensity & Management
+US Field Size,Remotely Sensed,Sentinel-2,Intensity & Management
+US Field Size,In Situ & Survey Data,National Statistics,Intensity & Management
+HLNID,Remotely Sensed,Landsat-5,Intensity & Management
+HLNID,Remotely Sensed,Landsat-7,Intensity & Management
+HLNID,Remotely Sensed,Landsat-8,Intensity & Management
+HLNID,Remotely Sensed,Landsat-9,Intensity & Management
+HLNID,Remotely Sensed,ResourceSat-1,Intensity & Management
+HLNID,Remotely Sensed,ResourceSat-2,Intensity & Management
+HLNID,Remotely Sensed,Deimos-1,Intensity & Management
+HLNID,Remotely Sensed,UK-DMC-2,Intensity & Management
+HLNID,Remotely Sensed,Sentinel-2,Intensity & Management
+HLNID,In Situ & Survey Data,National Statistics,Intensity & Management
+HLNID,Remotely Sensed,Landsat-ARD,Intensity & Management
+HLNID,Remotely Sensed,MODIS,Intensity & Management
+HLNID,In Situ & Survey Data,USDA FSA CLU,Intensity & Management
+Global Field Size,Remotely Sensed,ENVISAT,Intensity & Management
+Global Field Size,Remotely Sensed,Landsat-5,Intensity & Management
+Global Field Size,Remotely Sensed,Landsat-7,Intensity & Management
+Global Field Size,Remotely Sensed,SPOT,Intensity & Management
+Global Field Size,Remotely Sensed,ERS,Intensity & Management
+Global Field Size,Remotely Sensed,IRS-1C,Intensity & Management
+Global Field Size,Remotely Sensed,RADARSAT,Intensity & Management
+Global Field Size,Remotely Sensed,SPOT-4,Intensity & Management
+Global Field Size,Remotely Sensed,SPOT-5,Intensity & Management
+Global Field Size,Remotely Sensed,ResourceSat-2,Intensity & Management
+Global Field Size,Remotely Sensed,RapidEye,Intensity & Management
+Global Field Size,Remotely Sensed,Sentinel-2,Intensity & Management
+Global Field Size,Remotely Sensed,Landsat-8,Intensity & Management
+SPAM,In Situ & Survey Data,FAOSTAT,Intensity & Management
+SPAM,Remotely Sensed,ENVISAT,Intensity & Management
+SPAM,Remotely Sensed,Landsat-5,Intensity & Management
+SPAM,Remotely Sensed,Landsat-7,Intensity & Management
+SPAM,Remotely Sensed,SPOT,Intensity & Management
+SPAM,Remotely Sensed,ERS,Intensity & Management
+SPAM,Remotely Sensed,IRS-1C,Intensity & Management
+SPAM,Remotely Sensed,RADARSAT,Intensity & Management
+SPAM,Remotely Sensed,SPOT-4,Intensity & Management
+SPAM,Remotely Sensed,SPOT-5,Intensity & Management
+SPAM,Remotely Sensed,ResourceSat-2,Intensity & Management
+SPAM,Remotely Sensed,RapidEye,Intensity & Management
+SPAM,Remotely Sensed,Sentinel-2,Intensity & Management
+SPAM,Remotely Sensed,Landsat-8,Intensity & Management
+MIRCA2000,Remotely Sensed,Landsat-5,Intensity & Management
+MIRCA2000,Remotely Sensed,Landsat-7,Intensity & Management
+MIRCA2000,Remotely Sensed,Landsat-8,Intensity & Management
+MIRCA2000,Remotely Sensed,Landsat-9,Intensity & Management
+MIRCA2000,Remotely Sensed,ResourceSat-1,Intensity & Management
+MIRCA2000,Remotely Sensed,ResourceSat-2,Intensity & Management
+MIRCA2000,Remotely Sensed,Deimos-1,Intensity & Management
+MIRCA2000,Remotely Sensed,UK-DMC-2,Intensity & Management
+MIRCA2000,Remotely Sensed,Sentinel-2,Intensity & Management
+MIRCA2000,Remotely Sensed,MODIS,Intensity & Management
+MIRCA2000,In Situ & Survey Data,AgroMAPS,Intensity & Management
+MIRCA2000,In Situ & Survey Data,AQUASTAT,Intensity & Management
+MIRCA2000,In Situ & Survey Data,World Bank,Intensity & Management
+GMIA,Remotely Sensed,SPOT-4,Intensity & Management
+GMIA,Remotely Sensed,NOAA AVHRR,Intensity & Management
+MIrAD-US,Remotely Sensed,Landsat-5,Intensity & Management
+MIrAD-US,Remotely Sensed,Landsat-7,Intensity & Management
+MIrAD-US,Remotely Sensed,Landsat-8,Intensity & Management
+GLW,Remotely Sensed,SPOT-4,Livestock
+GLW,Remotely Sensed,Landsat-4,Livestock
+GLW,Remotely Sensed,Landsat-5,Livestock
+GLW,Remotely Sensed,Landsat-7,Livestock
+AGLW,Remotely Sensed,Landsat-4,Livestock
+AGLW,Remotely Sensed,Landsat-5,Livestock
+AGLW,Remotely Sensed,Landsat-7,Livestock
+EU Pesticides,In Situ & Survey Data,USGS PNSP,Pesticide
+EU Pesticides,In Situ & Survey Data,NASA/SEDAC,Pesticide
+EU Pesticides,In Situ & Survey Data,EUROSTAT,Pesticide
+EU Pesticides,Remotely Sensed,Sentinel-1,Pesticide
+EU Pesticides,Remotely Sensed,Sentinel-2,Pesticide
+EU Pesticides,In Situ & Survey Data,LUCAS,Pesticide
+EU Pesticides,Remotely Sensed,Landsat-5,Pesticide
+EU Pesticides,Remotely Sensed,Landsat-7,Pesticide
+EU Pesticides,Remotely Sensed,SPOT-4,Pesticide
+EU Pesticides,Remotely Sensed,SPOT-5,Pesticide
+EU Pesticides,Remotely Sensed,ResourceSat-2,Pesticide
+EU Pesticides,Remotely Sensed,RapidEye,Pesticide
+EU Pesticides,Remotely Sensed,Landsat-8,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,ISRIC,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,LUCAS,Pesticide
+PEST-CHEMGRIDS,Remotely Sensed,MODIS,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,National Statistics,Pesticide
+PEST-CHEMGRIDS,In Situ & Survey Data,AgroMAPS,Pesticide

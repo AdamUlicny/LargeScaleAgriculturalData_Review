@@ -1,0 +1,89 @@
+---
+title: "Data Preparation for Edge Bundling"
+format: html
+---
+
+## Setup
+
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+```
+
+## Parse Upstream Data Sources for Network Analysis
+
+To construct our hierarchical edge bundling plot, we extract the lineage of each dataset. Datasets can be derived directly from remote sensing (`inputRemote`) or statistical data (`inputStat`), or indirectly via existing land cover maps (`inputMap`).
+
+```{r parse-edges}
+# Load dataset from Excel workbook
+df_sorted <- read_excel(here("agri_data_review.xlsx"), sheet = "Sorted") |>
+  mutate(nameShort = str_squish(nameShort)) |>
+  filter(!is.na(nameShort), nameShort != "")
+
+# 1. Parse all direct dependencies into a flat list
+all_deps <- df_sorted |>
+  select(target = nameShort, inputMap, inputRemote, inputStat) |>
+  pivot_longer(
+    cols = c(inputMap, inputRemote, inputStat),
+    names_to = "input_field",
+    values_to = "source"
+  ) |>
+  mutate(
+    input_type = case_when(
+      input_field == "inputRemote" ~ "Remotely Sensed",
+      input_field == "inputStat"   ~ "In Situ & Survey Data",
+      input_field == "inputMap"    ~ "Map",
+      TRUE ~ NA_character_
+    )
+  ) |>
+  filter(!is.na(input_type), !is.na(source), source != "") |>
+  separate_rows(source, sep = "[,;]") |>
+  mutate(source = str_squish(source)) |>
+  filter(source != "", source != "?") |>
+  distinct(target, input_type, source)
+
+# 2. Restrict target datasets to agriculture and group them by category
+agri_targets <- df_sorted |>
+  filter(str_to_lower(str_squish(focus)) == "agriculture") |>
+  mutate(dataset_group = if_else(is.na(category) | str_squish(category) == "", "Crops", category)) |>
+  mutate(dataset_group = factor(dataset_group, levels = c(
+    "Combined Agroecosystem", "Crops", "Grassland", "Livestock",
+    "Intensity & Management", "Fertilizer", "Pesticide"
+  ))) |>
+  select(dataset = nameShort, dataset_group)
+
+# 3. Resolve Transitive Dependencies
+# Direct links (Remotely Sensed and In Situ & Survey Data)
+direct_rs <- all_deps |>
+  filter(target %in% agri_targets$dataset, input_type %in% c("Remotely Sensed", "In Situ & Survey Data")) |>
+  rename(dataset = target)
+
+# Indirect dependencies via inputMaps
+direct_maps <- all_deps |>
+  filter(target %in% agri_targets$dataset, input_type == "Map") |>
+  rename(dataset = target)
+
+map_sources <- all_deps |>
+  filter(target %in% direct_maps$source, input_type %in% c("Remotely Sensed", "In Situ & Survey Data"))
+
+# Link map usage back to base sources
+transitive_rs <- direct_maps |>
+  inner_join(map_sources, by = c("source" = "target"), relationship = "many-to-many") |>
+  select(dataset, input_type = input_type.y, source = source.y)
+
+# Combine, unique, and join with dataset groups
+links <- bind_rows(direct_rs, transitive_rs) |>
+  distinct() |>
+  inner_join(agri_targets, by = "dataset", relationship = "many-to-many")
+
+if (nrow(links) == 0) {
+  stop("No lineage links found after filtering. Check data.")
+}
+
+# 4. Save processed links for downstream visualization
+dir.create(here("data", "processed"), recursive = TRUE, showWarnings = FALSE)
+write_csv(links, here("data", "processed", "network_links.csv"))
+
+head(links)
+```

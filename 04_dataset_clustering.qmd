@@ -1,0 +1,112 @@
+---
+title: "Agricultural Dataset Clustering by Resolved Foundational Inputs"
+format: html
+---
+
+## Setup
+
+```{r setup, message=FALSE, warning=FALSE}
+if (!requireNamespace("ggdendro", quietly = TRUE)) {
+  install.packages("ggdendro", repos = "https://cloud.r-project.org/")
+}
+library(tidyverse)
+library(here)
+library(ggdendro)
+
+# Source project themes and palettes
+source(here("R", "theme_config.R"))
+```
+
+## Dataset Clustering by Resolved Foundational Inputs
+
+We cluster the agricultural datasets using the fully resolved foundational inputs derived from the edge bundling analysis (unpacking map dependencies into their origin remote sensing or statistical bases). We filter out "National Statistics" to maintain consistency with our primary analysis.
+
+```{r resolved-clustering}
+# Load lineage links computed in 01_data_prep.qmd
+links <- read_csv(here("data", "processed", "network_links.csv"), show_col_types = FALSE)
+
+# Filter out National Statistics and convert to wide binary matrix
+dataset_resolved_wide <- links |>
+  filter(!(input_type == "In Situ & Survey Data" & source == "National Statistics")) |>
+  distinct(dataset, source) |>
+  mutate(present = 1) |>
+  pivot_wider(
+    names_from = source,
+    values_from = present,
+    values_fill = list(present = 0)
+  ) |>
+  column_to_rownames("dataset")
+
+# Compute Jaccard distance matrix
+dist_mat_resolved <- dist(dataset_resolved_wide, method = "binary")
+
+# Perform hierarchical clustering using Ward's method
+hc_resolved <- hclust(dist_mat_resolved, method = "ward.D2")
+```
+
+## Dendrogram Visualization
+
+```{r plot-resolved-dendrogram, fig.width=10, fig.height=14}
+# Extract dendrogram data
+dendro_data_hc_resolved <- dendro_data(hc_resolved, type = "rectangle")
+
+segment_data_resolved <- segment(dendro_data_hc_resolved)
+label_data_resolved   <- label(dendro_data_hc_resolved)
+
+# Join category information to dataset labels
+ds_categories <- links |>
+  distinct(dataset, dataset_group) |>
+  group_by(dataset) |>
+  slice(1) |>
+  ungroup()
+
+label_data_resolved <- label_data_resolved |>
+  left_join(ds_categories, by = c("label" = "dataset"))
+
+# Create dendrogram plot
+p_dendro_resolved <- ggplot() +
+  geom_segment(
+    data = segment_data_resolved,
+    aes(x = x, y = y, xend = xend, yend = yend),
+    color = project_palette[["node_parent"]], linewidth = 0.5
+  ) +
+  geom_text(
+    data = label_data_resolved,
+    aes(x = x, y = y, label = label, color = dataset_group),
+    hjust = 0, size = 3.5, fontface = "bold", nudge_y = 0.01,
+    key_glyph = "point"
+  ) +
+  coord_flip(clip = "off") +
+  scale_y_reverse(expand = expansion(mult = c(0.02, 2.2))) +
+  scale_color_category() +
+  guides(color = guide_legend(override.aes = list(size = 5))) +
+  theme_publication() +
+  theme(
+    legend.position = c(0.85, 0.85),
+    legend.justification = c(1, 1),
+    legend.background = element_rect(fill = "white", color = NA),
+    axis.line = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  )
+
+p_dendro_resolved
+```
+
+## Save Outputs
+
+```{r save-outputs}
+dir.create(here("outputs", "figures"), recursive = TRUE, showWarnings = FALSE)
+
+ggsave(
+  here("outputs", "figures", "dataset_ancestry_resolved_dendrogram.png"),
+  p_dendro_resolved, width = 10, height = 12
+)
+
+ggsave(
+  here("outputs", "figures", "dataset_ancestry_resolved_dendrogram.pdf"),
+  p_dendro_resolved, width = 10, height = 12, device = cairo_pdf
+)
+```
