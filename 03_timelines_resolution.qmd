@@ -22,18 +22,21 @@ source(here("R", "theme_config.R"))
 df_raw <- read_excel(here("agri_data_review.xlsx"), sheet = "Sorted")
 
 df_agri <- df_raw |>
-  filter(focus == "agriculture") |>
-  mutate(
-    dataType = case_when(
-      dataType == "shp" ~ "vector",
-      TRUE ~ dataType
-    ),
-    Category = factor(category, levels = c(
-      "Combined Agroecosystem", "Crops", "Grassland", "Livestock",
-      "Intensity & Management", "Fertilizer", "Pesticide"
-    ))
-  ) |>
-  filter(dataType %in% c("raster", "vector"))
+    filter(focus == "agriculture") |>
+    mutate(
+        resolutionKm = as.numeric(resolutionKm),
+        temporalStart = as.numeric(temporalStart),
+        temporalEnd = as.numeric(temporalEnd),
+        dataType = case_when(
+            dataType == "shp" ~ "vector",
+            TRUE ~ dataType
+        ),
+        Category = factor(category, levels = c(
+            "Combined Agroecosystem", "Crops", "Grassland", "Livestock",
+            "Intensity & Management", "Fertilizer", "Pesticide"
+        ))
+    ) |>
+    filter(dataType %in% c("raster", "vector"))
 ```
 
 ## Composition: Barplots & Timeline
@@ -41,229 +44,244 @@ df_agri <- df_raw |>
 ```{r plot-composition, fig.height=18, fig.width=16}
 # 1. Combined Dodged & Stacked Barplot
 df_summary <- df_agri |>
-  filter(!is.na(Category)) |>
-  count(continent, Category)
+    filter(!is.na(Category)) |>
+    count(continent, Category)
 
 extent_levels <- levels(fct_infreq(df_agri$continent))
 
 df_summary <- df_summary |>
-  mutate(x_plot = factor(continent, levels = extent_levels))
+    mutate(x_plot = factor(continent, levels = extent_levels))
 
 p_combined_bar <- ggplot(df_summary, aes(x = as.numeric(x_plot), y = n)) +
-  geom_col(aes(fill = Category), width = 0.6, color = "white", linewidth = 0.5) +
-  scale_fill_category() +
-  scale_x_continuous(breaks = 1:length(extent_levels), labels = extent_levels) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
-  labs(x = "Continent", y = "Number of Datasets") +
-  theme_publication() +
-  theme(
-    axis.text.x = element_text(angle = 20, hjust = 0.6, size = 13, color = "black"),
-    axis.text.y = element_text(size = 13, color = "black"),
-    axis.title = element_text(size = 15, face = "bold"),
-    axis.line = element_line(color = "black"),
-    axis.ticks = element_line(color = "black"),
-    axis.ticks.length.y = unit(4, "pt"),
-    axis.title.y = element_text(angle = 90, margin = margin(r = 10))
-  )
+    geom_col(aes(fill = Category), width = 0.6, color = "white", linewidth = 0.5) +
+    scale_fill_category() +
+    scale_x_continuous(breaks = 1:length(extent_levels), labels = extent_levels) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
+    labs(x = "Continent", y = "Number of Datasets") +
+    theme_publication() +
+    theme(
+        axis.text.x = element_text(angle = 20, hjust = 0.6, size = 13, color = "black"),
+        axis.text.y = element_text(size = 13, color = "black"),
+        axis.title = element_text(size = 15, face = "bold"),
+        axis.line = element_line(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.ticks.length.y = unit(4, "pt"),
+        axis.title.y = element_text(angle = 90, margin = margin(r = 10))
+    )
 
 # 2. Timeline Plots
 df_events <- data.frame(
-  Year = c(1961, 1972, 2015),
-  Label = c("FAOSTAT", "Landsat", "Sentinel-2")
+    Year = c(1961, 1972, 2015),
+    Label = c("FAOSTAT", "Landsat", "Sentinel-2")
 )
 
 df_timeline_snapshot <- df_agri |>
-  filter(!is.na(temporalStart) & !is.na(temporalEnd)) |>
-  mutate(
-    timespan = temporalEnd - temporalStart,
-    is_timeseries = if_else(timespan > 0, "Time Series", "Static Snapshot")
-  ) |>
-  filter(is_timeseries == "Static Snapshot") |>
-  arrange(Category, desc(temporalStart)) |>
-  mutate(
-    plotStart = if_else(temporalStart < 1950, 1950, temporalStart),
-    nameShort = fct_rev(fct_inorder(nameShort))
-  )
+    filter(!is.na(temporalStart) & !is.na(temporalEnd)) |>
+    mutate(
+        timespan = temporalEnd - temporalStart,
+        is_timeseries = if_else(timespan > 0, "Time Series", "Static Snapshot")
+    ) |>
+    filter(is_timeseries == "Static Snapshot") |>
+    arrange(Category, desc(temporalStart)) |>
+    mutate(
+        plotStart = if_else(temporalStart < 1950, 1950, temporalStart),
+        nameShort = fct_rev(fct_inorder(nameShort))
+    )
 
 p_timeline_snapshot <- ggplot(df_timeline_snapshot, aes(y = nameShort)) +
-  geom_tile(aes(x = 1987.5, width = 75, fill = Category)) +
-  geom_point(aes(x = plotStart, shape = dataType), color = "#333333", fill = "white", size = 3) +
-  scale_fill_category() +
-  scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type") +
-  coord_cartesian(xlim = c(1950, 2025)) +
-  geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "darkred", alpha = 0.5) +
-  geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "darkred", size = 4.5, inherit.aes = FALSE) +
-  scale_x_continuous(
-    breaks = seq(1950, 2025, by = 5),
-    labels = ~ if_else(.x %% 10 == 0, as.character(.x), ""),
-    expand = c(0, 0)
-  ) +
-  labs(x = "Year", y = "Dataset Name", title = "Static Snapshots") +
-  facet_grid(Category ~ ., scales = "free_y", space = "free_y") +
-  theme_publication() +
-  theme(
-    plot.title = element_text(size = 15, face = "bold", margin = margin(b = 5)),
-    panel.grid.minor = element_blank(),
-    axis.text.y = element_text(size = 12, color = "black"),
-    axis.text.x = element_text(size = 13, color = "black"),
-    axis.title.x = element_text(size = 15, face = "bold", margin = margin(t = 10)),
-    axis.line.x = element_line(color = "black"),
-    axis.ticks.x = element_line(color = "black"),
-    axis.ticks.length.x = unit(4, "pt"),
-    strip.text.y = element_blank(),
-    strip.background = element_blank()
-  )
+    geom_tile(aes(x = 1987.5, width = 75, fill = Category)) +
+    geom_point(aes(x = plotStart, shape = dataType), color = "#333333", fill = "white", size = 3) +
+    scale_fill_category() +
+    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type") +
+    coord_cartesian(xlim = c(1950, 2025)) +
+    geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "darkred", alpha = 0.5) +
+    geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "darkred", size = 4.5, inherit.aes = FALSE) +
+    scale_x_continuous(
+        breaks = seq(1950, 2025, by = 5),
+        labels = ~ if_else(.x %% 10 == 0, as.character(.x), ""),
+        expand = c(0, 0)
+    ) +
+    labs(x = "Year", y = "Dataset Name", title = "Static Snapshots") +
+    facet_grid(Category ~ ., scales = "free_y", space = "free_y") +
+    theme_publication() +
+    theme(
+        plot.title = element_text(size = 15, face = "bold", margin = margin(b = 5)),
+        panel.grid.minor = element_blank(),
+        axis.text.y = element_text(size = 12, color = "black"),
+        axis.text.x = element_text(size = 13, color = "black"),
+        axis.title.x = element_text(size = 15, face = "bold", margin = margin(t = 10)),
+        axis.line.x = element_line(color = "black"),
+        axis.ticks.x = element_line(color = "black"),
+        axis.ticks.length.x = unit(4, "pt"),
+        strip.text.y = element_blank(),
+        strip.background = element_blank()
+    )
 
 df_timeline <- df_agri |>
-  filter(!is.na(temporalStart) & !is.na(temporalEnd)) |>
-  mutate(
-    timespan = temporalEnd - temporalStart,
-    is_timeseries = if_else(timespan > 0, "Time Series", "Static Snapshot")
-  ) |>
-  filter(is_timeseries == "Time Series") |>
-  arrange(Category, desc(temporalStart)) |>
-  mutate(nameShort = fct_rev(fct_inorder(nameShort))) |>
-  mutate(
-    plotStart = if_else(temporalStart < 1950, 1950, temporalStart),
-    plotEnd = if_else(temporalEnd > 2025, 2025, temporalEnd),
-    arrow_type = case_when(
-      temporalStart < 1950 & temporalEnd > 2025 ~ "both",
-      temporalStart < 1950 ~ "first",
-      temporalEnd > 2025 ~ "last",
-      TRUE ~ "none"
+    filter(!is.na(temporalStart) & !is.na(temporalEnd)) |>
+    mutate(
+        timespan = temporalEnd - temporalStart,
+        is_timeseries = if_else(timespan > 0, "Time Series", "Static Snapshot")
+    ) |>
+    filter(is_timeseries == "Time Series") |>
+    arrange(Category, desc(temporalStart)) |>
+    mutate(nameShort = fct_rev(fct_inorder(nameShort))) |>
+    mutate(
+        plotStart = if_else(temporalStart < 1950, 1950, temporalStart),
+        plotEnd = if_else(temporalEnd > 2025, 2025, temporalEnd),
+        arrow_type = case_when(
+            temporalStart < 1950 & temporalEnd > 2025 ~ "both",
+            temporalStart < 1950 ~ "first",
+            temporalEnd > 2025 ~ "last",
+            TRUE ~ "none"
+        )
     )
-  )
 
 p_timeline_series <- ggplot(df_timeline, aes(y = nameShort)) +
-  geom_tile(aes(x = 1987.5, width = 75, fill = Category)) +
-  geom_segment(
-    data = ~ filter(.x, arrow_type == "none" & timespan > 0),
-    aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5
-  ) +
-  geom_segment(
-    data = ~ filter(.x, arrow_type == "first"),
-    aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5,
-    arrow = arrow(length = unit(0.1, "inches"), ends = "first", type = "closed")
-  ) +
-  geom_segment(
-    data = ~ filter(.x, arrow_type == "last"),
-    aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5,
-    arrow = arrow(length = unit(0.1, "inches"), ends = "last", type = "closed")
-  ) +
-  geom_segment(
-    data = ~ filter(.x, arrow_type == "both"),
-    aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5,
-    arrow = arrow(length = unit(0.1, "inches"), ends = "both", type = "closed")
-  ) +
-  geom_point(aes(x = (plotStart + plotEnd) / 2, shape = dataType), color = "#333333", fill = "white", size = 2) +
-  scale_fill_category() +
-  scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type", guide = guide_legend(order = 3)) +
-  scale_y_discrete(position = "right") +
-  coord_cartesian(xlim = c(1950, 2025)) +
-  geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "darkred", alpha = 0.5) +
-  geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "darkred", size = 4.5, inherit.aes = FALSE) +
-  scale_x_continuous(
-    breaks = seq(1950, 2025, by = 5),
-    labels = ~ if_else(.x %% 10 == 0, as.character(.x), ""),
-    expand = c(0, 0)
-  ) +
-  labs(x = "Year", y = "Dataset Name", linetype = "Data Type", fill = "Category", title = "   Time Series") +
-  facet_grid(Category ~ ., scales = "free_y", space = "free_y", switch = "y") +
-  theme_publication() +
-  theme(
-    plot.title = element_text(size = 15, face = "bold", margin = margin(b = 5)),
-    panel.grid.minor = element_blank(),
-    axis.text.y = element_text(size = 12, color = "black"),
-    axis.text.x = element_text(size = 13, color = "black"),
-    axis.title.x = element_text(size = 15, face = "bold", margin = margin(t = 10)),
-    axis.line.x = element_line(color = "black"),
-    axis.ticks.x = element_line(color = "black"),
-    axis.ticks.length.x = unit(4, "pt"),
-    strip.text.y.left = element_blank(),
-    strip.background = element_blank(),
-    strip.placement = "outside"
-  )
+    geom_tile(aes(x = 1987.5, width = 75, fill = Category)) +
+    geom_segment(
+        data = ~ filter(.x, arrow_type == "none" & timespan > 0),
+        aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5
+    ) +
+    geom_segment(
+        data = ~ filter(.x, arrow_type == "first"),
+        aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5,
+        arrow = arrow(length = unit(0.1, "inches"), ends = "first", type = "closed")
+    ) +
+    geom_segment(
+        data = ~ filter(.x, arrow_type == "last"),
+        aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5,
+        arrow = arrow(length = unit(0.1, "inches"), ends = "last", type = "closed")
+    ) +
+    geom_segment(
+        data = ~ filter(.x, arrow_type == "both"),
+        aes(x = plotStart, xend = plotEnd, yend = nameShort), linetype = "solid", color = "#333333", linewidth = 1.5,
+        arrow = arrow(length = unit(0.1, "inches"), ends = "both", type = "closed")
+    ) +
+    geom_point(aes(x = (plotStart + plotEnd) / 2, shape = dataType), color = "#333333", fill = "white", size = 2) +
+    scale_fill_category() +
+    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type", guide = guide_legend(order = 3)) +
+    scale_y_discrete(position = "right") +
+    coord_cartesian(xlim = c(1950, 2025)) +
+    geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "darkred", alpha = 0.5) +
+    geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "darkred", size = 4.5, inherit.aes = FALSE) +
+    scale_x_continuous(
+        breaks = seq(1950, 2025, by = 5),
+        labels = ~ if_else(.x %% 10 == 0, as.character(.x), ""),
+        expand = c(0, 0)
+    ) +
+    labs(x = "Year", y = "Dataset Name", linetype = "Data Type", fill = "Category", title = "   Time Series") +
+    facet_grid(Category ~ ., scales = "free_y", space = "free_y", switch = "y") +
+    theme_publication() +
+    theme(
+        plot.title = element_text(size = 15, face = "bold", margin = margin(b = 5)),
+        panel.grid.minor = element_blank(),
+        axis.text.y = element_text(size = 12, color = "black"),
+        axis.text.x = element_text(size = 13, color = "black"),
+        axis.title.x = element_text(size = 15, face = "bold", margin = margin(t = 10)),
+        axis.line.x = element_line(color = "black"),
+        axis.ticks.x = element_line(color = "black"),
+        axis.ticks.length.x = unit(4, "pt"),
+        strip.text.y.left = element_blank(),
+        strip.background = element_blank(),
+        strip.placement = "outside"
+    )
 
 # 3. Prepare Scatterplot for Panel A
 df_scatter <- df_agri |>
-  mutate(timespan = temporalEnd - temporalStart) |>
-  filter(timespan <= 100, !is.na(timespan), !is.na(resolutionKm)) |>
-  mutate(plot_timespan = if_else(timespan == 0, 0.5, as.numeric(timespan)))
+    mutate(timespan = temporalEnd - temporalStart) |>
+    filter(timespan <= 100, !is.na(timespan), !is.na(resolutionKm)) |>
+    mutate(plot_timespan = if_else(timespan == 0, 0.5, as.numeric(timespan)))
 
 p_scatter <- ggplot(df_scatter, aes(x = plot_timespan, y = resolutionKm, color = Category, shape = dataType)) +
-  geom_point(size = 3.5, alpha = 0.8, fill = "white") +
-  scale_color_category() +
-  scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type") +
-  scale_x_log10(breaks = c(0.5, 1, 5, 10, 20, 50, 100), labels = c("Snapshot", "1", "5", "10", "20", "50", "100")) +
-  scale_y_log10(
-    breaks = c(0.01, 0.03, 0.1, 0.25, 0.5, 1, 5, 10, 50, 100, 600),
-    labels = c("10m", "30m", "100m", "250m", "500m", "1km", "5km", "10km", "50km", "100km", "per-country")
-  ) +
-  annotation_logticks(sides = "l") +
-  labs(x = "Timespan in years", y = "Spatial grain") +
-  theme_publication() +
-  theme(
-    panel.grid.major = element_line(color = "grey90"),
-    axis.line = element_line(color = "black"),
-    axis.ticks = element_line(color = "black"),
-    axis.ticks.length = unit(4, "pt"),
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 13, color = "black"),
-    axis.text.y = element_text(size = 13, color = "black"),
-    axis.title = element_text(size = 15, face = "bold"),
-    axis.title.y = element_text(angle = 90, margin = margin(r = 10)),
-    legend.position = "none"
-  )
+    geom_point(size = 3.5, alpha = 0.8, fill = "white") +
+    scale_color_category() +
+    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type") +
+    scale_x_log10(breaks = c(0.5, 1, 5, 10, 20, 50, 100), labels = c("Snapshot", "1", "5", "10", "20", "50", "100")) +
+    scale_y_log10(
+        breaks = c(0.01, 0.03, 0.1, 0.25, 0.5, 1, 5, 10, 50, 100, 600),
+        labels = c("10m", "30m", "100m", "250m", "500m", "1km", "5km", "10km", "50km", "100km", "per-country")
+    ) +
+    annotation_logticks(sides = "l") +
+    labs(x = "Timespan in years", y = "Spatial grain") +
+    theme_publication() +
+    theme(
+        panel.grid.major = element_line(color = "grey90"),
+        axis.line = element_line(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.ticks.length = unit(4, "pt"),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 13, color = "black"),
+        axis.text.y = element_text(size = 13, color = "black"),
+        axis.title = element_text(size = 15, face = "bold"),
+        axis.title.y = element_text(angle = 90, margin = margin(r = 10)),
+        legend.position = "none"
+    )
 
 # Extract shared legend
 n_cat <- max(length(category_colors), 2)
 dummy_col1 <- data.frame(
-  x = rep(1, n_cat), y = rep(1, n_cat),
-  fill_cat = factor(rep(names(category_colors), length.out = n_cat), levels = names(category_colors)),
-  dtype = factor(rep(c("raster", "vector"), length.out = n_cat), levels = c("raster", "vector"))
+    x = rep(1, n_cat), y = rep(1, n_cat),
+    fill_cat = factor(rep(names(category_colors), length.out = n_cat), levels = names(category_colors)),
+    dtype = factor(rep(c("raster", "vector"), length.out = n_cat), levels = c("raster", "vector"))
 )
 
 p_leg_col1 <- ggplot(dummy_col1) +
-  geom_col(aes(x, y, fill = fill_cat)) +
-  geom_segment(aes(x = 1, xend = 2, y = 1, yend = 1), linetype = "solid", linewidth = 1.5, color = "#333333") +
-  geom_point(aes(x = 1.5, y = 1, shape = dtype), size = 3, color = "#333333", fill = "white") +
-  scale_fill_category() +
-  scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type", drop = FALSE, guide = guide_legend(order = 2)) +
-  theme_publication() +
-  theme(
-    legend.position = "right",
-    legend.justification = c(0, 1),
-    legend.box = "vertical",
-    legend.margin = margin(t = 0),
-    legend.text = element_text(size = 13),
-    legend.title = element_text(size = 15, face = "bold"),
-    legend.key.size = unit(1.3, "lines")
-  )
+    geom_col(aes(x, y, fill = fill_cat)) +
+    geom_segment(aes(x = 1, xend = 2, y = 1, yend = 1), linetype = "solid", linewidth = 1.5, color = "#333333") +
+    geom_point(aes(x = 1.5, y = 1, shape = dtype), size = 3, color = "#333333", fill = "white") +
+    scale_fill_category() +
+    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type", drop = FALSE, guide = guide_legend(order = 2)) +
+    theme_publication() +
+    theme(
+        legend.position = "right",
+        legend.justification = c(0, 1),
+        legend.box = "vertical",
+        legend.margin = margin(t = 0),
+        legend.text = element_text(size = 13),
+        legend.title = element_text(size = 15, face = "bold"),
+        legend.key.size = unit(1.3, "lines")
+    )
 
 shared_legend <- cowplot::get_legend(p_leg_col1)
 
 # Clean individual plots of legends
-p_scatter_clean           <- p_scatter
-p_combined_bar_clean      <- p_combined_bar + theme(legend.position = "none")
-p_timeline_series_clean   <- p_timeline_series + theme(legend.position = "none")
+p_scatter_clean <- p_scatter
+p_combined_bar_clean <- p_combined_bar + theme(legend.position = "none")
+p_timeline_series_clean <- p_timeline_series + theme(legend.position = "none")
 p_timeline_snapshot_clean <- p_timeline_snapshot + theme(legend.position = "none")
 
 # Layout parameters
-scatter_x <- 0.02; scatter_y <- 0.55; scatter_w <- 0.40; scatter_h <- 0.40
-bar_x     <- 0.44; bar_y     <- 0.55; bar_w     <- 0.36; bar_h     <- 0.40
-leg_x     <- 0.81; leg_y     <- 0.55; leg_w     <- 0.18; leg_h     <- 0.40
-snap_x    <- 0.02; snap_y    <- 0.00; snap_w    <- 0.40; snap_h    <- 0.52
-ts_x      <- 0.44; ts_y      <- 0.00; ts_w      <- 0.54; ts_h      <- 0.52
+scatter_x <- 0.02
+scatter_y <- 0.55
+scatter_w <- 0.40
+scatter_h <- 0.40
+bar_x <- 0.44
+bar_y <- 0.55
+bar_w <- 0.36
+bar_h <- 0.40
+leg_x <- 0.81
+leg_y <- 0.55
+leg_w <- 0.18
+leg_h <- 0.40
+snap_x <- 0.02
+snap_y <- 0.00
+snap_w <- 0.40
+snap_h <- 0.52
+ts_x <- 0.44
+ts_y <- 0.00
+ts_w <- 0.54
+ts_h <- 0.52
 
 combined_plot <- ggdraw() +
-  draw_plot(p_scatter_clean, x = scatter_x, y = scatter_y, width = scatter_w, height = scatter_h) +
-  draw_plot_label("a", x = 0.02, y = scatter_y + scatter_h, size = 24, fontface = "bold") +
-  draw_plot(p_combined_bar_clean, x = bar_x, y = bar_y, width = bar_w, height = bar_h) +
-  draw_plot_label("b", x = bar_x, y = bar_y + bar_h, size = 24, fontface = "bold") +
-  draw_plot(shared_legend, x = leg_x, y = leg_y, width = leg_w, height = leg_h) +
-  draw_plot(p_timeline_snapshot_clean, x = snap_x, y = snap_y, width = snap_w, height = snap_h) +
-  draw_plot_label("c", x = snap_x, y = snap_y + snap_h, size = 24, fontface = "bold") +
-  draw_plot(p_timeline_series_clean, x = ts_x, y = ts_y, width = ts_w, height = ts_h) +
-  draw_plot_label("d", x = ts_x, y = ts_y + ts_h, size = 24, fontface = "bold")
+    draw_plot(p_scatter_clean, x = scatter_x, y = scatter_y, width = scatter_w, height = scatter_h) +
+    draw_plot_label("a", x = 0.02, y = scatter_y + scatter_h, size = 24, fontface = "bold") +
+    draw_plot(p_combined_bar_clean, x = bar_x, y = bar_y, width = bar_w, height = bar_h) +
+    draw_plot_label("b", x = bar_x, y = bar_y + bar_h, size = 24, fontface = "bold") +
+    draw_plot(shared_legend, x = leg_x, y = leg_y, width = leg_w, height = leg_h) +
+    draw_plot(p_timeline_snapshot_clean, x = snap_x, y = snap_y, width = snap_w, height = snap_h) +
+    draw_plot_label("c", x = snap_x, y = snap_y + snap_h, size = 24, fontface = "bold") +
+    draw_plot(p_timeline_series_clean, x = ts_x, y = ts_y, width = ts_w, height = ts_h) +
+    draw_plot_label("d", x = ts_x, y = ts_y + ts_h, size = 24, fontface = "bold")
 
 combined_plot
 ```
@@ -274,23 +292,23 @@ combined_plot
 dir.create(here("outputs", "figures"), recursive = TRUE, showWarnings = FALSE)
 
 ggsave(
-  filename = here("outputs", "figures", "fig_timelines_and_resolution.svg"),
-  plot = combined_plot, width = 16, height = 20
+    filename = here("outputs", "figures", "fig_timelines_and_resolution.svg"),
+    plot = combined_plot, width = 16, height = 20
 )
 
 ggsave(
-  filename = here("outputs", "figures", "fig_timelines_and_resolution.eps"),
-  plot = combined_plot, width = 16, height = 20, device = cairo_ps
+    filename = here("outputs", "figures", "fig_timelines_and_resolution.eps"),
+    plot = combined_plot, width = 16, height = 20, device = cairo_ps
 )
 
 ggsave(
-  filename = here("outputs", "figures", "fig_timelines_and_resolution.pdf"),
-  plot = combined_plot, width = 16, height = 20, device = cairo_pdf
+    filename = here("outputs", "figures", "fig_timelines_and_resolution.pdf"),
+    plot = combined_plot, width = 16, height = 20, device = cairo_pdf
 )
 
 ggsave(
-  filename = here("outputs", "figures", "fig_timelines_and_resolution.png"),
-  plot = combined_plot, width = 16, height = 18, bg = "white"
+    filename = here("outputs", "figures", "fig_timelines_and_resolution.png"),
+    plot = combined_plot, width = 16, height = 18, bg = "white"
 )
 ```
 
@@ -300,51 +318,51 @@ ggsave(
 library(knitr)
 
 general_format_stats <- df_agri |>
-  count(dataType, name = "Count") |>
-  mutate(Percentage = round((Count / sum(Count)) * 100, 1)) |>
-  arrange(desc(Count))
+    count(dataType, name = "Count") |>
+    mutate(Percentage = round((Count / sum(Count)) * 100, 1)) |>
+    arrange(desc(Count))
 kable(general_format_stats, caption = "General Overview: Dataset Formats (Raster vs Vector)")
 
 general_spatial_stats <- df_agri |>
-  count(continent, name = "Count") |>
-  mutate(Percentage = round((Count / sum(Count)) * 100, 1)) |>
-  arrange(desc(Count))
+    count(continent, name = "Count") |>
+    mutate(Percentage = round((Count / sum(Count)) * 100, 1)) |>
+    arrange(desc(Count))
 kable(general_spatial_stats, caption = "General Overview: Dataset Distribution by Continent")
 
 panel_b_each <- df_summary |>
-  group_by(continent) |>
-  mutate(Total = sum(n), Percentage = round((n / Total) * 100, 1)) |>
-  ungroup()
+    group_by(continent) |>
+    mutate(Total = sum(n), Percentage = round((n / Total) * 100, 1)) |>
+    ungroup()
 
 panel_b_total <- df_summary |>
-  group_by(Category) |>
-  summarise(n = sum(n), .groups = "drop") |>
-  mutate(continent = "All Continents Combined", Total = sum(n), Percentage = round((n / Total) * 100, 1))
+    group_by(Category) |>
+    summarise(n = sum(n), .groups = "drop") |>
+    mutate(continent = "All Continents Combined", Total = sum(n), Percentage = round((n / Total) * 100, 1))
 
 panel_b_stats <- bind_rows(panel_b_each, panel_b_total) |>
-  arrange(continent == "All Continents Combined", continent, desc(n))
+    arrange(continent == "All Continents Combined", continent, desc(n))
 
 kable(panel_b_stats, caption = "Panel B: Dataset Distribution by Continent")
 
 panel_c_stats <- df_timeline_snapshot |>
-  summarise(
-    `Total Snapshots` = n(),
-    `Raster Count` = sum(dataType == "raster"),
-    `Vector Count` = sum(dataType == "vector"),
-    `Oldest Snapshot Year` = min(temporalStart, na.rm = TRUE),
-    `Newest Snapshot Year` = max(temporalEnd, na.rm = TRUE)
-  )
+    summarise(
+        `Total Snapshots` = n(),
+        `Raster Count` = sum(dataType == "raster"),
+        `Vector Count` = sum(dataType == "vector"),
+        `Oldest Snapshot Year` = min(temporalStart, na.rm = TRUE),
+        `Newest Snapshot Year` = max(temporalEnd, na.rm = TRUE)
+    )
 kable(panel_c_stats, caption = "Panel C: Static Snapshot Summary Statistics")
 
 panel_d_stats <- df_timeline |>
-  summarise(
-    `Total Time Series` = n(),
-    `Mean Duration (years)` = round(mean(timespan, na.rm = TRUE), 1),
-    `Median Duration (years)` = median(timespan, na.rm = TRUE),
-    `Oldest Start Year` = min(temporalStart, na.rm = TRUE),
-    `Newest End Year` = max(temporalEnd, na.rm = TRUE),
-    `Datasets Extending Past 2025` = sum(temporalEnd > 2025, na.rm = TRUE)
-  )
+    summarise(
+        `Total Time Series` = n(),
+        `Mean Duration (years)` = round(mean(timespan, na.rm = TRUE), 1),
+        `Median Duration (years)` = median(timespan, na.rm = TRUE),
+        `Oldest Start Year` = min(temporalStart, na.rm = TRUE),
+        `Newest End Year` = max(temporalEnd, na.rm = TRUE),
+        `Datasets Extending Past 2025` = sum(temporalEnd > 2025, na.rm = TRUE)
+    )
 kable(panel_d_stats, caption = "Panel D: Time Series Summary Statistics")
 ```
 
@@ -352,40 +370,68 @@ kable(panel_d_stats, caption = "Panel D: Time Series Summary Statistics")
 
 ```{r plot-boxplot, fig.width=8, fig.height=6}
 df_boxplot <- df_agri |>
-  filter(dataType == "raster" & !is.na(temporalStart) & !is.na(temporalEnd)) |>
-  filter(temporalStart >= 1900 & temporalEnd <= 2026) |>
-  mutate(
-    duration = temporalEnd - temporalStart + 1,
-    Timespan = case_when(
-      duration > 10 ~ ">10 years",
-      duration >= 3 & duration <= 10 ~ "3-10 years",
-      duration >= 1 & duration < 3 ~ "1-3 years",
-      TRUE ~ NA_character_
-    )
-  ) |>
-  filter(!is.na(Timespan)) |>
-  mutate(Timespan = factor(Timespan, levels = c(">10 years", "3-10 years", "1-3 years")))
+    filter(dataType == "raster" & !is.na(temporalStart) & !is.na(temporalEnd)) |>
+    filter(temporalStart >= 1900 & temporalEnd <= 2026) |>
+    mutate(
+        duration = temporalEnd - temporalStart + 1,
+        Timespan = case_when(
+            duration > 10 ~ ">10 years",
+            duration >= 3 & duration <= 10 ~ "3-10 years",
+            duration >= 1 & duration < 3 ~ "1-3 years",
+            TRUE ~ NA_character_
+        )
+    ) |>
+    filter(!is.na(Timespan)) |>
+    mutate(Timespan = factor(Timespan, levels = c(">10 years", "3-10 years", "1-3 years")))
 
 p_boxplot <- ggplot(df_boxplot, aes(x = Timespan, y = resolutionKm)) +
-  geom_boxplot(fill = "#e0e0e0", color = "black", outlier.shape = 21, outlier.fill = "white") +
-  scale_y_log10(labels = function(x) format(x, scientific = FALSE, drop0trailing = TRUE)) +
-  labs(x = "Timespan", y = "Resolution (km)") +
-  theme_publication() +
-  theme(
-    axis.line = element_line(color = "black"),
-    axis.ticks = element_line(color = "black"),
-    axis.ticks.length = unit(4, "pt"),
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 13, color = "black"),
-    axis.text.y = element_text(size = 13, color = "black"),
-    axis.title = element_text(size = 15, hjust = .6, face = "bold"),
-    axis.title.y = element_text(angle = 90, margin = margin(r = 10)),
-    plot.margin = margin(t = 10, r = 10, b = 20, l = 10)
-  )
+    geom_boxplot(fill = "#e0e0e0", color = "black", outlier.shape = 21, outlier.fill = "white") +
+    scale_y_log10(labels = function(x) format(x, scientific = FALSE, drop0trailing = TRUE)) +
+    labs(x = "Timespan", y = "Resolution (km)") +
+    theme_publication() +
+    theme(
+        axis.line = element_line(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.ticks.length = unit(4, "pt"),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 13, color = "black"),
+        axis.text.y = element_text(size = 13, color = "black"),
+        axis.title = element_text(size = 15, hjust = .6, face = "bold"),
+        axis.title.y = element_text(angle = 90, margin = margin(r = 10)),
+        plot.margin = margin(t = 10, r = 10, b = 20, l = 10)
+    )
 
 p_boxplot
 
 ggsave(
-  here("outputs", "figures", "supplemental_boxplot.png"),
-  p_boxplot, width = 8, height = 6, bg = "white"
+    here("outputs", "figures", "supplemental_boxplot.png"),
+    p_boxplot,
+    width = 8, height = 6, bg = "white"
 )
+
+# Summary statistics table for Supplemental Boxplot (per class)
+boxplot_stats <- df_boxplot |>
+    group_by(Timespan) |>
+    summarise(
+        `Count (n)` = n(),
+        `Mean Timespan (years)` = round(mean(duration, na.rm = TRUE), 1),
+        `Median Timespan (years)` = round(median(duration, na.rm = TRUE), 1),
+        `Mean Resolution (km)` = round(mean(resolutionKm, na.rm = TRUE), 3),
+        `Median Resolution (km)` = round(median(resolutionKm, na.rm = TRUE), 3),
+        .groups = "drop"
+    )
+
+kable(boxplot_stats, caption = "Supplemental Boxplot: Summary Statistics by Timespan Class")
+
+# Overall summary statistics table for Supplemental Boxplot subselection
+overall_boxplot_stats <- df_boxplot |>
+    summarise(
+        `Subselection` = "Overall Subselection Combined",
+        `Count (n)` = n(),
+        `Mean Timespan (years)` = round(mean(duration, na.rm = TRUE), 1),
+        `Median Timespan (years)` = round(median(duration, na.rm = TRUE), 1),
+        `Mean Resolution (km)` = round(mean(resolutionKm, na.rm = TRUE), 3),
+        `Median Resolution (km)` = round(median(resolutionKm, na.rm = TRUE), 3)
+    )
+
+kable(overall_boxplot_stats, caption = "Supplemental Boxplot: Overall Subselection Summary Statistics")
 ```

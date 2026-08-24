@@ -12,10 +12,7 @@ Farmland 2015,Remotely Sensed,MODIS,Combined Agroecosystem
 Farmland 2015,In Situ & Survey Data,FAOSTAT,Combined Agroecosystem
 Farmland 2015,In Situ & Survey Data,National Statistics,Combined Agroecosystem
 Farmland 2015,In Situ & Survey Data,EUROSTAT,Combined Agroecosystem
-USGS GFSAD30,Remotely Sensed,Landsat-7,Combined Agroecosystem
-USGS GFSAD30,Remotely Sensed,Landsat-8,Combined Agroecosystem
-USGS GFSAD30,Remotely Sensed,Sentinel-2,Combined Agroecosystem
-USGS GFSAD30,Remotely Sensed,VHRI,Combined Agroecosystem
+CLUM,In Situ & Survey Data,National Statistics,Combined Agroecosystem
 LULC India,Remotely Sensed,Cartosat 2S,Combined Agroecosystem
 LULC India,Remotely Sensed,ResourceSat-1,Combined Agroecosystem
 LULC India,Remotely Sensed,ResourceSat-2,Combined Agroecosystem
@@ -39,6 +36,10 @@ LULC India Decadal,Remotely Sensed,Landsat-5,Combined Agroecosystem
 LULC India Decadal,Remotely Sensed,IRS-1B,Combined Agroecosystem
 LULC India Decadal,Remotely Sensed,Landsat-4,Combined Agroecosystem
 DynamicWorld,Remotely Sensed,Sentinel-2,Combined Agroecosystem
+USGS GFSAD30,Remotely Sensed,Landsat-7,Crops
+USGS GFSAD30,Remotely Sensed,Landsat-8,Crops
+USGS GFSAD30,Remotely Sensed,Sentinel-2,Crops
+USGS GFSAD30,Remotely Sensed,VHRI,Crops
 USDA NASS CDL,Remotely Sensed,Landsat-5,Crops
 USDA NASS CDL,Remotely Sensed,Landsat-7,Crops
 USDA NASS CDL,Remotely Sensed,Landsat-8,Crops
@@ -169,7 +170,6 @@ PEST-CHEMGRIDS,In Situ & Survey Data,FAOSTAT,Pesticide
 PEST-CHEMGRIDS,In Situ & Survey Data,NASA/SEDAC,Pesticide
 GCG 2006,Remotely Sensed,SPOT-4,Combined Agroecosystem
 GCG 2006,Remotely Sensed,NOAA AVHRR,Combined Agroecosystem
-USGS GFSAD30,In Situ & Survey Data,FAO,Combined Agroecosystem
 HILDA+,Remotely Sensed,PROBA-V,Combined Agroecosystem
 HILDA+,Remotely Sensed,ENVISAT,Combined Agroecosystem
 HILDA+,Remotely Sensed,Sentinel-1,Combined Agroecosystem
@@ -228,6 +228,7 @@ Anthromes,In Situ & Survey Data,UN,Combined Agroecosystem
 Anthromes,In Situ & Survey Data,WWF,Combined Agroecosystem
 Anthromes,In Situ & Survey Data,NOAA-NGDC,Combined Agroecosystem
 Anthromes,In Situ & Survey Data,AgroMAPS,Combined Agroecosystem
+USGS GFSAD30,In Situ & Survey Data,FAO,Crops
 USDA NASS CDL,Remotely Sensed,Lidar,Crops
 USDA NASS CDL,In Situ & Survey Data,USDA,Crops
 WorldCereal,In Situ & Survey Data,NASA,Crops
@@ -262,6 +263,7 @@ AgroMAPS,In Situ & Survey Data,FAO,Crops
 SASAM-GC,Remotely Sensed,ENVISAT,Crops
 SASAM-GC,Remotely Sensed,Sentinel-1,Crops
 SASAM-GC,Remotely Sensed,Sentinel-2,Crops
+SASAM-GC,In Situ & Survey Data,National Statistics,Crops
 SASAM-GC,Remotely Sensed,HJ-1A,Crops
 SASAM-GC,Remotely Sensed,HJ-1B,Crops
 SASAM-GC,Remotely Sensed,Landsat-5,Crops

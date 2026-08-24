@@ -63,9 +63,8 @@
 <polyline points='455.77,563.00 455.77,91.93 ' style='stroke-width: 0.75; stroke: #E5E5E5;' />
 <polygon points='349.10,502.92 357.28,502.92 357.28,494.74 349.10,494.74 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='271.50,545.68 279.68,545.68 279.68,537.50 271.50,537.50 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
+<polygon points='322.79,276.80 330.97,276.80 330.97,268.62 322.79,268.62 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='155.10,276.80 163.28,276.80 163.28,268.62 155.10,268.62 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
-<polygon points='155.10,276.80 163.28,276.80 163.28,268.62 155.10,268.62 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
-<polygon points='376.28,502.92 384.45,502.92 384.45,494.74 376.28,494.74 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='155.10,483.03 163.28,483.03 163.28,474.86 155.10,474.86 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='352.49,502.92 360.67,502.92 360.67,494.74 352.49,494.74 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='423.09,366.43 431.26,366.43 431.26,358.25 423.09,358.25 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
@@ -74,6 +73,7 @@
 <polygon points='396.02,502.92 404.20,502.92 404.20,494.74 396.02,494.74 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='361.59,456.05 369.77,456.05 369.77,447.88 361.59,447.88 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
 <polygon points='328.12,545.68 336.30,545.68 336.30,537.50 328.12,537.50 ' style='stroke-width: 0.71; stroke: none; fill: #827365; fill-opacity: 0.80;' />
+<polygon points='322.79,502.92 330.97,502.92 330.97,494.74 322.79,494.74 ' style='stroke-width: 0.71; stroke: none; fill: #DE9F47; fill-opacity: 0.80;' />
 <polygon points='352.49,502.92 360.67,502.92 360.67,494.74 352.49,494.74 ' style='stroke-width: 0.71; stroke: none; fill: #DE9F47; fill-opacity: 0.80;' />
 <polygon points='403.12,241.13 411.30,241.13 411.30,232.95 403.12,232.95 ' style='stroke-width: 0.71; stroke: none; fill: #DE9F47; fill-opacity: 0.80;' />
 <polygon points='155.10,545.68 163.28,545.68 163.28,537.50 155.10,537.50 ' style='stroke-width: 0.71; stroke: none; fill: #DE9F47; fill-opacity: 0.80;' />
@@ -254,8 +254,8 @@
 <rect x='632.96' y='473.03' width='26.68' height='55.96' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
 <rect x='632.96' y='529.00' width='26.68' height='22.39' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
 <rect x='632.96' y='551.38' width='26.68' height='22.39' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
-<rect x='588.49' y='114.87' width='26.68' height='89.54' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='588.49' y='204.41' width='26.68' height='89.54' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='588.49' y='114.87' width='26.68' height='78.35' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='588.49' y='193.22' width='26.68' height='100.73' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
 <rect x='588.49' y='293.95' width='26.68' height='11.19' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
 <rect x='588.49' y='305.14' width='26.68' height='33.58' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
 <rect x='588.49' y='338.72' width='26.68' height='123.12' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
@@ -331,120 +331,118 @@
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpMTc0LjI4fDQ1OC45M3w3MjkuNzN8ODEzLjU1'>
-    <rect x='174.28' y='729.73' width='284.65' height='83.82' />
+  <clipPath id='cpMTc0LjI4fDQ1OC45M3w3MjkuNzN8Nzg5Ljg2'>
+    <rect x='174.28' y='729.73' width='284.65' height='60.13' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3w3MjkuNzN8ODEzLjU1)'>
-<rect x='174.28' y='732.35' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='174.28' y='758.54' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='174.28' y='784.74' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<polygon points='447.79,749.00 454.90,749.00 454.90,741.89 447.79,741.89 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='417.42,775.20 424.54,775.20 424.54,768.09 417.42,768.09 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='383.27,801.39 390.38,801.39 390.38,794.28 383.27,794.28 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='216.03' y1='813.55' x2='216.03' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='257.78' y1='813.55' x2='257.78' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='420.98' y1='813.55' x2='420.98' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(221.04,807.92) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(262.79,809.00) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(425.99,807.79) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3w3MjkuNzN8Nzg5Ljg2)'>
+<rect x='174.28' y='732.46' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='174.28' y='759.80' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<polygon points='447.79,749.69 454.90,749.69 454.90,742.58 447.79,742.58 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='417.42,777.02 424.54,777.02 424.54,769.91 417.42,769.91 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='216.03' y1='789.86' x2='216.03' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='257.78' y1='789.86' x2='257.78' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='420.98' y1='789.86' x2='420.98' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(221.04,784.23) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(262.79,785.31) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(425.99,784.10) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpMTc0LjI4fDQ1OC45M3w4MTkuMDN8OTU1LjI0'>
-    <rect x='174.28' y='819.03' width='284.65' height='136.21' />
+  <clipPath id='cpMTc0LjI4fDQ1OC45M3w3OTUuMzR8OTM3LjQ4'>
+    <rect x='174.28' y='795.34' width='284.65' height='142.13' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3w4MTkuMDN8OTU1LjI0)'>
-<rect x='174.28' y='821.65' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='174.28' y='847.85' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='174.28' y='874.04' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='174.28' y='900.23' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='174.28' y='926.43' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<polygon points='440.20,838.30 447.31,838.30 447.31,831.19 440.20,831.19 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='436.40,864.50 443.51,864.50 443.51,857.39 436.40,857.39 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='432.61,890.69 439.72,890.69 439.72,883.58 432.61,883.58 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='398.45,916.89 405.56,916.89 405.56,909.78 398.45,909.78 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='360.49,943.08 367.61,943.08 367.61,935.97 360.49,935.97 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='216.03' y1='955.24' x2='216.03' y2='819.03' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='257.78' y1='955.24' x2='257.78' y2='819.03' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='420.98' y1='955.24' x2='420.98' y2='819.03' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(221.04,949.60) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(262.79,950.69) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(425.99,949.48) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3w3OTUuMzR8OTM3LjQ4)'>
+<rect x='174.28' y='798.08' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='174.28' y='825.41' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='174.28' y='852.74' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='174.28' y='880.08' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='174.28' y='907.41' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<polygon points='440.20,815.30 447.31,815.30 447.31,808.19 440.20,808.19 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='436.40,842.63 443.51,842.63 443.51,835.52 436.40,835.52 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='432.61,869.96 439.72,869.96 439.72,862.85 432.61,862.85 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='398.45,897.30 405.56,897.30 405.56,890.19 398.45,890.19 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='360.49,924.63 367.61,924.63 367.61,917.52 360.49,917.52 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='216.03' y1='937.48' x2='216.03' y2='795.34' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='257.78' y1='937.48' x2='257.78' y2='795.34' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='420.98' y1='937.48' x2='420.98' y2='795.34' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(221.04,931.84) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(262.79,932.92) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(425.99,931.72) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpMTc0LjI4fDQ1OC45M3w5NjAuNzJ8MTI1NC4xMA=='>
-    <rect x='174.28' y='960.72' width='284.65' height='293.37' />
+  <clipPath id='cpMTc0LjI4fDQ1OC45M3w5NDIuOTV8MTI0OS4wOA=='>
+    <rect x='174.28' y='942.95' width='284.65' height='306.13' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3w5NjAuNzJ8MTI1NC4xMA==)'>
-<rect x='174.28' y='963.34' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='989.53' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1015.73' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1041.92' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1068.12' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1094.31' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1120.51' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1146.70' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1172.89' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1199.09' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='174.28' y='1225.28' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<polygon points='455.38,979.99 462.49,979.99 462.49,972.88 455.38,972.88 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='443.99,1006.19 451.10,1006.19 451.10,999.08 443.99,999.08 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='436.40,1032.38 443.51,1032.38 443.51,1025.27 436.40,1025.27 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='428.81,1058.58 435.92,1058.58 435.92,1051.46 428.81,1051.46 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='398.45,1084.77 405.56,1084.77 405.56,1077.66 398.45,1077.66 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='398.45,1110.96 405.56,1110.96 405.56,1103.85 398.45,1103.85 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='398.45,1137.16 405.56,1137.16 405.56,1130.05 398.45,1130.05 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='379.47,1163.35 386.58,1163.35 386.58,1156.24 379.47,1156.24 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='379.47,1189.55 386.58,1189.55 386.58,1182.44 379.47,1182.44 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='360.90' y='1209.03' width='6.30' height='6.30' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='360.49,1241.93 367.61,1241.93 367.61,1234.82 360.49,1234.82 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='216.03' y1='1254.10' x2='216.03' y2='960.72' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='257.78' y1='1254.10' x2='257.78' y2='960.72' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='420.98' y1='1254.10' x2='420.98' y2='960.72' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(221.04,1248.46) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(262.79,1249.54) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(425.99,1248.34) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3w5NDIuOTV8MTI0OS4wOA==)'>
+<rect x='174.28' y='945.69' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='973.02' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1000.35' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1027.69' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1055.02' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1082.35' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1109.69' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1137.02' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1164.35' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1191.68' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='174.28' y='1219.02' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<polygon points='455.38,962.91 462.49,962.91 462.49,955.80 455.38,955.80 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='443.99,990.24 451.10,990.24 451.10,983.13 443.99,983.13 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='436.40,1017.58 443.51,1017.58 443.51,1010.47 436.40,1010.47 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='428.81,1044.91 435.92,1044.91 435.92,1037.80 428.81,1037.80 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='398.45,1072.24 405.56,1072.24 405.56,1065.13 398.45,1065.13 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='398.45,1099.57 405.56,1099.57 405.56,1092.46 398.45,1092.46 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='398.45,1126.91 405.56,1126.91 405.56,1119.80 398.45,1119.80 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='379.47,1154.24 386.58,1154.24 386.58,1147.13 379.47,1147.13 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='379.47,1181.57 386.58,1181.57 386.58,1174.46 379.47,1174.46 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='360.90' y='1202.20' width='6.30' height='6.30' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='360.49,1236.24 367.61,1236.24 367.61,1229.13 360.49,1229.13 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='216.03' y1='1249.08' x2='216.03' y2='942.95' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='257.78' y1='1249.08' x2='257.78' y2='942.95' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='420.98' y1='1249.08' x2='420.98' y2='942.95' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(221.04,1243.45) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(262.79,1244.53) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(425.99,1243.32) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpMTc0LjI4fDQ1OC45M3wxMjU5LjU3fDEzNDMuNDA='>
-    <rect x='174.28' y='1259.57' width='284.65' height='83.82' />
+  <clipPath id='cpMTc0LjI4fDQ1OC45M3wxMjU0LjU2fDEzNDIuMDM='>
+    <rect x='174.28' y='1254.56' width='284.65' height='87.47' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3wxMjU5LjU3fDEzNDMuNDA=)'>
-<rect x='174.28' y='1262.19' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='174.28' y='1288.39' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='174.28' y='1314.58' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<polygon points='436.40,1278.85 443.51,1278.85 443.51,1271.74 436.40,1271.74 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='364.29,1305.04 371.40,1305.04 371.40,1297.93 364.29,1297.93 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='360.49,1331.23 367.61,1331.23 367.61,1324.12 360.49,1324.12 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='216.03' y1='1343.40' x2='216.03' y2='1259.57' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='257.78' y1='1343.40' x2='257.78' y2='1259.57' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='420.98' y1='1343.40' x2='420.98' y2='1259.57' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(221.04,1337.76) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(262.79,1338.84) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(425.99,1337.64) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3wxMjU0LjU2fDEzNDIuMDM=)'>
+<rect x='174.28' y='1257.30' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='174.28' y='1284.63' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='174.28' y='1311.96' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<polygon points='436.40,1274.52 443.51,1274.52 443.51,1267.41 436.40,1267.41 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='364.29,1301.85 371.40,1301.85 371.40,1294.74 364.29,1294.74 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='360.49,1329.18 367.61,1329.18 367.61,1322.07 360.49,1322.07 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='216.03' y1='1342.03' x2='216.03' y2='1254.56' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='257.78' y1='1342.03' x2='257.78' y2='1254.56' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='420.98' y1='1342.03' x2='420.98' y2='1254.56' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(221.04,1336.39) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(262.79,1337.48) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(425.99,1336.27) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpMTc0LjI4fDQ1OC45M3wxMzQ4Ljg4fDEzODAuMzE='>
-    <rect x='174.28' y='1348.88' width='284.65' height='31.43' />
+  <clipPath id='cpMTc0LjI4fDQ1OC45M3wxMzQ3LjUxfDEzODAuMzE='>
+    <rect x='174.28' y='1347.51' width='284.65' height='32.80' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3wxMzQ4Ljg4fDEzODAuMzE=)'>
-<rect x='174.28' y='1351.49' width='284.65' height='26.19' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
-<polygon points='428.81,1368.15 435.92,1368.15 435.92,1361.04 428.81,1361.04 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='216.03' y1='1380.31' x2='216.03' y2='1348.88' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='257.78' y1='1380.31' x2='257.78' y2='1348.88' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='420.98' y1='1380.31' x2='420.98' y2='1348.88' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<g clip-path='url(#cpMTc0LjI4fDQ1OC45M3wxMzQ3LjUxfDEzODAuMzE=)'>
+<rect x='174.28' y='1350.24' width='284.65' height='27.33' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
+<polygon points='428.81,1367.46 435.92,1367.46 435.92,1360.35 428.81,1360.35 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='216.03' y1='1380.31' x2='216.03' y2='1347.51' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='257.78' y1='1380.31' x2='257.78' y2='1347.51' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='420.98' y1='1380.31' x2='420.98' y2='1347.51' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
 <text transform='translate(221.04,1374.67) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
 <text transform='translate(262.79,1375.76) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
 <text transform='translate(425.99,1374.55) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
@@ -475,29 +473,28 @@
 <text x='364.05' y='1394.87' text-anchor='middle' style='font-size: 13.00px; font-family: "Liberation Sans";' textLength='28.94px' lengthAdjust='spacingAndGlyphs'>2000</text>
 <text x='402.00' y='1394.87' text-anchor='middle' style='font-size: 13.00px; font-family: "Liberation Sans";' textLength='28.94px' lengthAdjust='spacingAndGlyphs'>2010</text>
 <text x='439.96' y='1394.87' text-anchor='middle' style='font-size: 13.00px; font-family: "Liberation Sans";' textLength='28.94px' lengthAdjust='spacingAndGlyphs'>2020</text>
-<text x='111.11' y='801.97' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='57.34px' lengthAdjust='spacingAndGlyphs'>GCG 2006</text>
-<text x='111.11' y='775.77' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='80.70px' lengthAdjust='spacingAndGlyphs'>Farmland 2015</text>
-<text x='111.11' y='749.58' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='34.02px' lengthAdjust='spacingAndGlyphs'>CLUM</text>
-<text x='111.11' y='943.65' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='56.02px' lengthAdjust='spacingAndGlyphs'>MRF 2000</text>
-<text x='111.11' y='917.46' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='64.00px' lengthAdjust='spacingAndGlyphs'>SASAM-GC</text>
-<text x='111.11' y='891.27' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='82.70px' lengthAdjust='spacingAndGlyphs'>Africa Cropland</text>
-<text x='111.11' y='865.07' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='72.67px' lengthAdjust='spacingAndGlyphs'>CROPGRIDS</text>
-<text x='111.11' y='838.88' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='66.48px' lengthAdjust='spacingAndGlyphs'>WorldCereal</text>
-<text x='111.11' y='1242.51' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='65.36px' lengthAdjust='spacingAndGlyphs'>MIRCA2000</text>
-<text x='111.11' y='1216.31' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='77.80px' lengthAdjust='spacingAndGlyphs'>Farm Avg Size</text>
-<text x='111.11' y='1190.12' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='30.66px' lengthAdjust='spacingAndGlyphs'>GMIA</text>
-<text x='111.11' y='1163.93' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='90.70px' lengthAdjust='spacingAndGlyphs'>Global Field Size</text>
-<text x='111.11' y='1137.73' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='72.69px' lengthAdjust='spacingAndGlyphs'>US Field Size</text>
-<text x='111.11' y='1111.54' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='126.72px' lengthAdjust='spacingAndGlyphs'>Crowdsource Field Size</text>
-<text x='111.11' y='1085.34' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='66.69px' lengthAdjust='spacingAndGlyphs'>EU Irrigation</text>
-<text x='111.11' y='1059.15' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='96.70px' lengthAdjust='spacingAndGlyphs'>Cropping Intensity</text>
-<text x='111.11' y='1032.95' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='33.11px' lengthAdjust='spacingAndGlyphs'>SPAM</text>
-<text x='111.11' y='1006.76' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='99.33px' lengthAdjust='spacingAndGlyphs'>EU Farm Statistics</text>
-<text x='111.11' y='980.57' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='25.98px' lengthAdjust='spacingAndGlyphs'>FTW</text>
-<text x='111.11' y='1331.81' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='98.03px' lengthAdjust='spacingAndGlyphs'>Fertilizer Per-Crop</text>
-<text x='111.11' y='1305.61' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='113.38px' lengthAdjust='spacingAndGlyphs'>Fertilizer and Manure</text>
-<text x='111.11' y='1279.42' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='62.67px' lengthAdjust='spacingAndGlyphs'>NPKGRIDS</text>
-<text x='111.11' y='1368.72' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='74.69px' lengthAdjust='spacingAndGlyphs'>EU Pesticides</text>
+<text x='111.11' y='777.59' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='80.70px' lengthAdjust='spacingAndGlyphs'>Farmland 2015</text>
+<text x='111.11' y='750.26' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='34.02px' lengthAdjust='spacingAndGlyphs'>CLUM</text>
+<text x='111.11' y='925.20' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='56.02px' lengthAdjust='spacingAndGlyphs'>MRF 2000</text>
+<text x='111.11' y='897.87' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='64.00px' lengthAdjust='spacingAndGlyphs'>SASAM-GC</text>
+<text x='111.11' y='870.54' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='82.70px' lengthAdjust='spacingAndGlyphs'>Africa Cropland</text>
+<text x='111.11' y='843.21' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='72.67px' lengthAdjust='spacingAndGlyphs'>CROPGRIDS</text>
+<text x='111.11' y='815.87' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='66.48px' lengthAdjust='spacingAndGlyphs'>WorldCereal</text>
+<text x='111.11' y='1236.81' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='65.36px' lengthAdjust='spacingAndGlyphs'>MIRCA2000</text>
+<text x='111.11' y='1209.48' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='77.80px' lengthAdjust='spacingAndGlyphs'>Farm Avg Size</text>
+<text x='111.11' y='1182.15' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='30.66px' lengthAdjust='spacingAndGlyphs'>GMIA</text>
+<text x='111.11' y='1154.81' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='90.70px' lengthAdjust='spacingAndGlyphs'>Global Field Size</text>
+<text x='111.11' y='1127.48' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='72.69px' lengthAdjust='spacingAndGlyphs'>US Field Size</text>
+<text x='111.11' y='1100.15' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='126.72px' lengthAdjust='spacingAndGlyphs'>Crowdsource Field Size</text>
+<text x='111.11' y='1072.82' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='66.69px' lengthAdjust='spacingAndGlyphs'>EU Irrigation</text>
+<text x='111.11' y='1045.48' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='96.70px' lengthAdjust='spacingAndGlyphs'>Cropping Intensity</text>
+<text x='111.11' y='1018.15' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='33.11px' lengthAdjust='spacingAndGlyphs'>SPAM</text>
+<text x='111.11' y='990.82' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='99.33px' lengthAdjust='spacingAndGlyphs'>EU Farm Statistics</text>
+<text x='111.11' y='963.48' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='25.98px' lengthAdjust='spacingAndGlyphs'>FTW</text>
+<text x='111.11' y='1329.76' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='98.03px' lengthAdjust='spacingAndGlyphs'>Fertilizer Per-Crop</text>
+<text x='111.11' y='1302.43' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='113.38px' lengthAdjust='spacingAndGlyphs'>Fertilizer and Manure</text>
+<text x='111.11' y='1275.09' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='62.67px' lengthAdjust='spacingAndGlyphs'>NPKGRIDS</text>
+<text x='111.11' y='1368.04' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='74.69px' lengthAdjust='spacingAndGlyphs'>EU Pesticides</text>
 <text x='316.61' y='1418.42' text-anchor='middle' style='font-size: 15.00px; font-weight: bold; font-family: "Liberation Sans";' textLength='31.70px' lengthAdjust='spacingAndGlyphs'>Year</text>
 <text x='174.28' y='721.45' style='font-size: 15.00px; font-weight: bold; font-family: "Liberation Sans";' textLength='121.69px' lengthAdjust='spacingAndGlyphs'>Static Snapshots</text>
 <text x='29.71' y='715.98' style='font-size: 24.00px; font-weight: bold; font-family: "Liberation Sans";' textLength='13.34px' lengthAdjust='spacingAndGlyphs'>c</text>
@@ -513,268 +510,270 @@
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXw3MjkuNzN8ODgyLjQy'>
-    <rect x='531.79' y='729.73' width='430.20' height='152.69' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXw3MjkuNzN8ODc5LjYx'>
+    <rect x='531.79' y='729.73' width='430.20' height='149.88' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXw3MjkuNzN8ODgyLjQy)'>
-<rect x='531.79' y='730.89' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='742.46' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='754.02' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='765.59' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='777.16' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='788.73' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='800.29' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='811.86' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='823.43' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='834.99' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='846.56' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='858.13' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<rect x='531.79' y='869.70' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
-<line x1='921.83' y1='736.67' x2='944.78' y2='736.67' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='870.21' y1='759.81' x2='961.99' y2='759.81' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='847.27' y1='771.37' x2='944.78' y2='771.37' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='749.75' y1='794.51' x2='961.99' y2='794.51' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='732.55' y1='806.08' x2='961.99' y2='806.08' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='732.55' y1='817.64' x2='944.78' y2='817.64' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='732.55' y1='829.21' x2='847.27' y2='829.21' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='589.15' y1='840.78' x2='933.31' y2='840.78' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='531.79' y1='852.35' x2='818.59' y2='852.35' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='538.02,848.75 531.79,852.35 538.02,855.95 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<line x1='531.79' y1='875.48' x2='961.99' y2='875.48' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='538.02,871.88 531.79,875.48 538.02,879.08 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<line x1='904.63' y1='748.24' x2='961.99' y2='748.24' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='955.75,751.84 961.99,748.24 955.75,744.64 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<line x1='818.59' y1='782.94' x2='961.99' y2='782.94' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='955.75,786.54 961.99,782.94 955.75,779.34 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<line x1='531.79' y1='863.91' x2='961.99' y2='863.91' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='538.02,860.31 531.79,863.91 538.02,867.51 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<polygon points='955.75,867.51 961.99,863.91 955.75,860.31 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<polygon points='930.82,739.16 935.79,739.16 935.79,734.18 930.82,734.18 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='930.82,750.73 935.79,750.73 935.79,745.75 930.82,745.75 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='913.61,762.29 918.59,762.29 918.59,757.32 913.61,757.32 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='893.53,773.86 898.51,773.86 898.51,768.89 893.53,768.89 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='887.80,785.43 892.77,785.43 892.77,780.45 887.80,780.45 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='853.38,797.00 858.36,797.00 858.36,792.02 853.38,792.02 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='844.78,808.56 849.75,808.56 849.75,803.59 844.78,803.59 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='836.17,820.13 841.15,820.13 841.15,815.16 836.17,815.16 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='787.42,831.70 792.39,831.70 792.39,826.72 787.42,826.72 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='758.74,843.27 763.71,843.27 763.71,838.29 758.74,838.29 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='672.70,854.83 677.67,854.83 677.67,849.86 672.70,849.86 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='744.40,866.40 749.37,866.40 749.37,861.43 744.40,861.43 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='744.40,877.97 749.37,877.97 749.37,872.99 744.40,872.99 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='594.88' y1='882.42' x2='594.88' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='882.42' x2='657.98' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='882.42' x2='904.63' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(597.95,876.78) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(661.05,877.87) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(907.70,876.66) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXw3MjkuNzN8ODc5LjYx)'>
+<rect x='531.79' y='730.87' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='742.22' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='753.58' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='764.93' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='776.29' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='787.64' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='799.00' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='810.35' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='821.71' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='833.06' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='844.41' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='855.77' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<rect x='531.79' y='867.12' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #827365;' />
+<line x1='921.83' y1='736.54' x2='944.78' y2='736.54' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='870.21' y1='759.25' x2='961.99' y2='759.25' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='847.27' y1='770.61' x2='944.78' y2='770.61' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='761.23' y1='781.96' x2='818.59' y2='781.96' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='749.75' y1='793.32' x2='961.99' y2='793.32' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='732.55' y1='804.67' x2='961.99' y2='804.67' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='732.55' y1='816.03' x2='944.78' y2='816.03' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='732.55' y1='827.38' x2='847.27' y2='827.38' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='589.15' y1='838.74' x2='933.31' y2='838.74' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='531.79' y1='850.09' x2='818.59' y2='850.09' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='538.02,846.49 531.79,850.09 538.02,853.69 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<line x1='531.79' y1='872.80' x2='961.99' y2='872.80' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='538.02,869.20 531.79,872.80 538.02,876.40 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<line x1='904.63' y1='747.90' x2='961.99' y2='747.90' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='955.75,751.50 961.99,747.90 955.75,744.30 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<line x1='531.79' y1='861.45' x2='961.99' y2='861.45' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='538.02,857.85 531.79,861.45 538.02,865.05 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<polygon points='955.75,865.05 961.99,861.45 955.75,857.85 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<polygon points='930.82,739.03 935.79,739.03 935.79,734.06 930.82,734.06 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='930.82,750.39 935.79,750.39 935.79,745.41 930.82,745.41 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='913.61,761.74 918.59,761.74 918.59,756.77 913.61,756.77 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='893.53,773.10 898.51,773.10 898.51,768.12 893.53,768.12 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='787.42,784.45 792.39,784.45 792.39,779.48 787.42,779.48 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='853.38,795.81 858.36,795.81 858.36,790.83 853.38,790.83 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='844.78,807.16 849.75,807.16 849.75,802.18 844.78,802.18 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='836.17,818.52 841.15,818.52 841.15,813.54 836.17,813.54 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='787.42,829.87 792.39,829.87 792.39,824.89 787.42,824.89 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='758.74,841.23 763.71,841.23 763.71,836.25 758.74,836.25 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='672.70,852.58 677.67,852.58 677.67,847.60 672.70,847.60 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='744.40,863.94 749.37,863.94 749.37,858.96 744.40,858.96 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='744.40,875.29 749.37,875.29 749.37,870.31 744.40,870.31 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='594.88' y1='879.61' x2='594.88' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='879.61' x2='657.98' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='879.61' x2='904.63' y2='729.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(597.95,873.98) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(661.05,875.06) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(907.70,873.86) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXw4ODcuOTB8MTAwNS44OQ=='>
-    <rect x='531.79' y='887.90' width='430.20' height='117.99' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXw4ODUuMDl8MTAxMi4yNw=='>
+    <rect x='531.79' y='885.09' width='430.20' height='127.17' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXw4ODcuOTB8MTAwNS44OQ==)'>
-<rect x='531.79' y='889.06' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='900.62' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='912.19' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='923.76' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='935.33' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='946.89' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='958.46' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='970.03' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='981.60' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<rect x='531.79' y='993.16' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
-<line x1='927.57' y1='894.84' x2='950.51' y2='894.84' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='927.57' y1='906.41' x2='961.99' y2='906.41' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='921.83' y1='917.98' x2='956.25' y2='917.98' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='916.10' y1='929.54' x2='950.51' y2='929.54' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='864.47' y1='941.11' x2='961.99' y2='941.11' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='818.59' y1='952.68' x2='933.31' y2='952.68' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='818.59' y1='964.25' x2='927.57' y2='964.25' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='818.59' y1='975.81' x2='916.10' y2='975.81' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='703.87' y1='987.38' x2='944.78' y2='987.38' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='531.79' y1='998.95' x2='772.70' y2='998.95' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='538.02,995.35 531.79,998.95 538.02,1002.55 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<rect x='936.84' y='892.64' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='942.29,908.90 947.27,908.90 947.27,903.92 942.29,903.92 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='936.55,920.46 941.53,920.46 941.53,915.49 936.55,915.49 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='930.82,932.03 935.79,932.03 935.79,927.06 930.82,927.06 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='910.74,943.60 915.72,943.60 915.72,938.62 910.74,938.62 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='873.74' y='950.47' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='870.59,966.73 875.57,966.73 875.57,961.76 870.59,961.76 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='864.85,978.30 869.83,978.30 869.83,973.32 864.85,973.32 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='821.83,989.87 826.81,989.87 826.81,984.89 821.83,984.89 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='649.75,1001.44 654.73,1001.44 654.73,996.46 649.75,996.46 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='594.88' y1='1005.89' x2='594.88' y2='887.90' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='1005.89' x2='657.98' y2='887.90' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='1005.89' x2='904.63' y2='887.90' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(597.95,1000.25) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(661.05,1001.34) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(907.70,1000.13) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXw4ODUuMDl8MTAxMi4yNw==)'>
+<rect x='531.79' y='886.23' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='897.58' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='908.94' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='920.29' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='931.65' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='943.00' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='954.36' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='965.71' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='977.07' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='988.42' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<rect x='531.79' y='999.78' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #DE9F47;' />
+<line x1='927.57' y1='891.91' x2='950.51' y2='891.91' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='927.57' y1='903.26' x2='961.99' y2='903.26' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='921.83' y1='914.62' x2='956.25' y2='914.62' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='916.10' y1='925.97' x2='950.51' y2='925.97' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='875.95' y1='937.33' x2='933.31' y2='937.33' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='864.47' y1='948.68' x2='961.99' y2='948.68' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='818.59' y1='960.04' x2='933.31' y2='960.04' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='818.59' y1='971.39' x2='927.57' y2='971.39' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='818.59' y1='982.75' x2='916.10' y2='982.75' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='703.87' y1='994.10' x2='944.78' y2='994.10' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='531.79' y1='1005.45' x2='772.70' y2='1005.45' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='538.02,1001.85 531.79,1005.45 538.02,1009.05 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<rect x='936.84' y='889.70' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='942.29,905.75 947.27,905.75 947.27,900.77 942.29,900.77 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='936.55,917.10 941.53,917.10 941.53,912.13 936.55,912.13 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='930.82,928.46 935.79,928.46 935.79,923.48 930.82,923.48 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='902.14,939.81 907.11,939.81 907.11,934.84 902.14,934.84 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='910.74,951.17 915.72,951.17 915.72,946.19 910.74,946.19 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='873.74' y='957.83' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='870.59,973.88 875.57,973.88 875.57,968.90 870.59,968.90 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='864.85,985.23 869.83,985.23 869.83,980.26 864.85,980.26 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='821.83,996.59 826.81,996.59 826.81,991.61 821.83,991.61 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='649.75,1007.94 654.73,1007.94 654.73,1002.97 649.75,1002.97 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='594.88' y1='1012.27' x2='594.88' y2='885.09' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='1012.27' x2='657.98' y2='885.09' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='1012.27' x2='904.63' y2='885.09' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(597.95,1006.63) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(661.05,1007.72) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(907.70,1006.51) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMDExLjM3fDEwNTkuOTU='>
-    <rect x='531.79' y='1011.37' width='430.20' height='48.58' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMDE3Ljc1fDEwNjUuNDQ='>
+    <rect x='531.79' y='1017.75' width='430.20' height='47.69' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMDExLjM3fDEwNTkuOTU=)'>
-<rect x='531.79' y='1012.52' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
-<rect x='531.79' y='1024.09' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
-<rect x='531.79' y='1035.66' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
-<rect x='531.79' y='1047.23' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
-<line x1='916.10' y1='1018.31' x2='950.51' y2='1018.31' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='904.63' y1='1029.88' x2='944.78' y2='1029.88' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='818.59' y1='1041.44' x2='944.78' y2='1041.44' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='726.81' y1='1053.01' x2='950.51' y2='1053.01' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='930.82,1020.80 935.79,1020.80 935.79,1015.82 930.82,1015.82 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='922.50' y='1027.67' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='879.19,1043.93 884.17,1043.93 884.17,1038.95 879.19,1038.95 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='836.17,1055.50 841.15,1055.50 841.15,1050.52 836.17,1050.52 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='594.88' y1='1059.95' x2='594.88' y2='1011.37' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='1059.95' x2='657.98' y2='1011.37' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='1059.95' x2='904.63' y2='1011.37' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(597.95,1054.31) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(661.05,1055.40) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(907.70,1054.19) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMDE3Ljc1fDEwNjUuNDQ=)'>
+<rect x='531.79' y='1018.88' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
+<rect x='531.79' y='1030.24' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
+<rect x='531.79' y='1041.59' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
+<rect x='531.79' y='1052.95' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #587E54;' />
+<line x1='916.10' y1='1024.56' x2='950.51' y2='1024.56' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='904.63' y1='1035.91' x2='944.78' y2='1035.91' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='818.59' y1='1047.27' x2='944.78' y2='1047.27' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='726.81' y1='1058.62' x2='950.51' y2='1058.62' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='930.82,1027.05 935.79,1027.05 935.79,1022.07 930.82,1022.07 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='922.50' y='1033.71' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='879.19,1049.76 884.17,1049.76 884.17,1044.78 879.19,1044.78 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='836.17,1061.11 841.15,1061.11 841.15,1056.14 836.17,1056.14 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='594.88' y1='1065.44' x2='594.88' y2='1017.75' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='1065.44' x2='657.98' y2='1017.75' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='1065.44' x2='904.63' y2='1017.75' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(597.95,1059.80) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(661.05,1060.89) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(907.70,1059.68) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMDY1LjQzfDExMjUuNTg='>
-    <rect x='531.79' y='1065.43' width='430.20' height='60.15' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMDcwLjkyfDExMjkuOTY='>
+    <rect x='531.79' y='1070.92' width='430.20' height='59.04' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMDY1LjQzfDExMjUuNTg=)'>
-<rect x='531.79' y='1066.59' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
-<rect x='531.79' y='1078.15' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
-<rect x='531.79' y='1089.72' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
-<rect x='531.79' y='1101.29' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
-<rect x='531.79' y='1112.86' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
-<line x1='875.95' y1='1072.37' x2='950.51' y2='1072.37' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='847.27' y1='1083.94' x2='904.63' y2='1083.94' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='818.59' y1='1095.51' x2='933.31' y2='1095.51' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1107.07' x2='950.51' y2='1107.07' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1118.64' x2='939.04' y2='1118.64' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<rect x='911.02' y='1070.17' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='873.46,1086.43 878.43,1086.43 878.43,1081.45 873.46,1081.45 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='873.74' y='1093.30' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='770.49' y='1104.87' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='764.47,1121.13 769.45,1121.13 769.45,1116.15 764.47,1116.15 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='594.88' y1='1125.58' x2='594.88' y2='1065.43' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='1125.58' x2='657.98' y2='1065.43' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='1125.58' x2='904.63' y2='1065.43' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(597.95,1119.94) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(661.05,1121.03) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(907.70,1119.82) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMDcwLjkyfDExMjkuOTY=)'>
+<rect x='531.79' y='1072.05' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
+<rect x='531.79' y='1083.41' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
+<rect x='531.79' y='1094.76' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
+<rect x='531.79' y='1106.12' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
+<rect x='531.79' y='1117.47' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B85A4E;' />
+<line x1='875.95' y1='1077.73' x2='950.51' y2='1077.73' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='847.27' y1='1089.08' x2='904.63' y2='1089.08' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='818.59' y1='1100.44' x2='933.31' y2='1100.44' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1111.79' x2='950.51' y2='1111.79' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1123.15' x2='939.04' y2='1123.15' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<rect x='911.02' y='1075.52' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='873.46,1091.57 878.43,1091.57 878.43,1086.60 873.46,1086.60 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='873.74' y='1098.23' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='770.49' y='1109.59' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='764.47,1125.64 769.45,1125.64 769.45,1120.66 764.47,1120.66 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='594.88' y1='1129.96' x2='594.88' y2='1070.92' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='1129.96' x2='657.98' y2='1070.92' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='1129.96' x2='904.63' y2='1070.92' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(597.95,1124.32) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(661.05,1125.41) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(907.70,1124.20) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMTMxLjA2fDEyMzcuNDg='>
-    <rect x='531.79' y='1131.06' width='430.20' height='106.42' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMTM1LjQ0fDEyMzkuOTA='>
+    <rect x='531.79' y='1135.44' width='430.20' height='104.46' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMTMxLjA2fDEyMzcuNDg=)'>
-<rect x='531.79' y='1132.22' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1143.78' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1155.35' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1166.92' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1178.49' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1190.05' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1201.62' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1213.19' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<rect x='531.79' y='1224.76' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
-<line x1='921.83' y1='1138.00' x2='950.51' y2='1138.00' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='916.10' y1='1149.57' x2='950.51' y2='1149.57' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='887.42' y1='1161.14' x2='939.04' y2='1161.14' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='847.27' y1='1172.70' x2='875.95' y2='1172.70' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='830.06' y1='1184.27' x2='916.10' y2='1184.27' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='824.32' y1='1195.84' x2='927.57' y2='1195.84' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='732.55' y1='1207.41' x2='956.25' y2='1207.41' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1218.97' x2='950.51' y2='1218.97' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='531.79' y1='1230.54' x2='933.31' y2='1230.54' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<polygon points='538.02,1226.94 531.79,1230.54 538.02,1234.14 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
-<polygon points='933.69,1140.49 938.66,1140.49 938.66,1135.51 933.69,1135.51 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='930.82,1152.06 935.79,1152.06 935.79,1147.08 930.82,1147.08 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='911.02' y='1158.93' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='859.40' y='1170.50' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='870.59,1186.76 875.57,1186.76 875.57,1181.78 870.59,1181.78 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<polygon points='873.46,1198.33 878.43,1198.33 878.43,1193.35 873.46,1193.35 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='842.19' y='1205.20' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='770.49' y='1216.77' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='730.06,1233.03 735.03,1233.03 735.03,1228.05 730.06,1228.05 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<line x1='594.88' y1='1237.48' x2='594.88' y2='1131.06' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='1237.48' x2='657.98' y2='1131.06' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='1237.48' x2='904.63' y2='1131.06' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(597.95,1231.84) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(661.05,1232.93) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(907.70,1231.72) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMTM1LjQ0fDEyMzkuOTA=)'>
+<rect x='531.79' y='1136.58' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1147.93' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1159.29' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1170.64' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1182.00' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1193.35' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1204.70' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1216.06' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<rect x='531.79' y='1227.41' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #3B6E8C;' />
+<line x1='921.83' y1='1142.25' x2='950.51' y2='1142.25' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='916.10' y1='1153.61' x2='950.51' y2='1153.61' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='887.42' y1='1164.96' x2='939.04' y2='1164.96' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='847.27' y1='1176.32' x2='875.95' y2='1176.32' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='830.06' y1='1187.67' x2='916.10' y2='1187.67' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='824.32' y1='1199.03' x2='927.57' y2='1199.03' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='732.55' y1='1210.38' x2='956.25' y2='1210.38' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1221.74' x2='950.51' y2='1221.74' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='531.79' y1='1233.09' x2='933.31' y2='1233.09' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<polygon points='538.02,1229.49 531.79,1233.09 538.02,1236.69 ' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt; fill: #333333;' />
+<polygon points='933.69,1144.74 938.66,1144.74 938.66,1139.77 933.69,1139.77 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='930.82,1156.10 935.79,1156.10 935.79,1151.12 930.82,1151.12 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='911.02' y='1162.76' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='859.40' y='1174.11' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='870.59,1190.16 875.57,1190.16 875.57,1185.18 870.59,1185.18 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<polygon points='873.46,1201.52 878.43,1201.52 878.43,1196.54 873.46,1196.54 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='842.19' y='1208.18' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='770.49' y='1219.53' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='730.06,1235.58 735.03,1235.58 735.03,1230.60 730.06,1230.60 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<line x1='594.88' y1='1239.90' x2='594.88' y2='1135.44' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='1239.90' x2='657.98' y2='1135.44' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='1239.90' x2='904.63' y2='1135.44' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(597.95,1234.27) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(661.05,1235.35) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(907.70,1234.15) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMjQyLjk2fDEzMjYuMjU='>
-    <rect x='531.79' y='1242.96' width='430.20' height='83.29' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMjQ1LjM4fDEzMjcuMTQ='>
+    <rect x='531.79' y='1245.38' width='430.20' height='81.75' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMjQyLjk2fDEzMjYuMjU=)'>
-<rect x='531.79' y='1244.12' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='531.79' y='1255.68' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='531.79' y='1267.25' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='531.79' y='1278.82' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='531.79' y='1290.39' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='531.79' y='1301.95' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<rect x='531.79' y='1313.52' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
-<line x1='864.47' y1='1249.90' x2='927.57' y2='1249.90' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='772.70' y1='1261.47' x2='961.99' y2='1261.47' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1273.04' x2='933.31' y2='1273.04' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1284.60' x2='881.68' y2='1284.60' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1296.17' x2='950.51' y2='1296.17' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1307.74' x2='950.51' y2='1307.74' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='594.88' y1='1319.31' x2='927.57' y2='1319.31' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<rect x='893.82' y='1247.70' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='865.14' y='1259.26' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='761.61,1275.52 766.58,1275.52 766.58,1270.55 761.61,1270.55 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='736.08' y='1282.40' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='770.49' y='1293.97' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='770.49' y='1305.53' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='759.02' y='1317.10' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<line x1='594.88' y1='1326.25' x2='594.88' y2='1242.96' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='1326.25' x2='657.98' y2='1242.96' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='1326.25' x2='904.63' y2='1242.96' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text transform='translate(597.95,1320.61) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
-<text transform='translate(661.05,1321.69) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
-<text transform='translate(907.70,1320.49) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMjQ1LjM4fDEzMjcuMTQ=)'>
+<rect x='531.79' y='1246.52' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='531.79' y='1257.87' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='531.79' y='1269.23' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='531.79' y='1280.58' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='531.79' y='1291.94' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='531.79' y='1303.29' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<rect x='531.79' y='1314.65' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8DA35D;' />
+<line x1='864.47' y1='1252.20' x2='927.57' y2='1252.20' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='772.70' y1='1263.55' x2='961.99' y2='1263.55' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1274.91' x2='933.31' y2='1274.91' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1286.26' x2='881.68' y2='1286.26' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1297.62' x2='950.51' y2='1297.62' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1308.97' x2='950.51' y2='1308.97' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='594.88' y1='1320.33' x2='927.57' y2='1320.33' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<rect x='893.82' y='1249.99' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='865.14' y='1261.35' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='761.61,1277.39 766.58,1277.39 766.58,1272.42 761.61,1272.42 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='736.08' y='1284.06' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='770.49' y='1295.41' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='770.49' y='1306.77' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='759.02' y='1318.12' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<line x1='594.88' y1='1327.14' x2='594.88' y2='1245.38' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='1327.14' x2='657.98' y2='1245.38' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='1327.14' x2='904.63' y2='1245.38' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text transform='translate(597.95,1321.50) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
+<text transform='translate(661.05,1322.59) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
+<text transform='translate(907.70,1321.38) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
 </g>
 <g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8MTQ0MC4wMA==)'>
 </g>
 <defs>
-  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMzMxLjczfDEzODAuMzE='>
-    <rect x='531.79' y='1331.73' width='430.20' height='48.58' />
+  <clipPath id='cpNTMxLjc5fDk2MS45OXwxMzMyLjYyfDEzODAuMzE='>
+    <rect x='531.79' y='1332.62' width='430.20' height='47.69' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMzMxLjczfDEzODAuMzE=)'>
-<rect x='531.79' y='1332.88' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
-<rect x='531.79' y='1344.45' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
-<rect x='531.79' y='1356.02' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
-<rect x='531.79' y='1367.58' width='430.20' height='11.57' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
-<line x1='904.63' y1='1338.67' x2='956.25' y2='1338.67' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='904.63' y1='1350.23' x2='961.99' y2='1350.23' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='772.70' y1='1361.80' x2='887.42' y2='1361.80' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<line x1='761.23' y1='1373.37' x2='950.51' y2='1373.37' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
-<rect x='928.23' y='1336.46' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<polygon points='930.82,1352.72 935.79,1352.72 935.79,1347.74 930.82,1347.74 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
-<rect x='827.85' y='1359.60' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<rect x='853.66' y='1371.16' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
-<line x1='594.88' y1='1380.31' x2='594.88' y2='1331.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='657.98' y1='1380.31' x2='657.98' y2='1331.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='904.63' y1='1380.31' x2='904.63' y2='1331.73' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<g clip-path='url(#cpNTMxLjc5fDk2MS45OXwxMzMyLjYyfDEzODAuMzE=)'>
+<rect x='531.79' y='1333.75' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
+<rect x='531.79' y='1345.11' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
+<rect x='531.79' y='1356.46' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
+<rect x='531.79' y='1367.82' width='430.20' height='11.35' style='stroke-width: 0.43; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #764E6F;' />
+<line x1='904.63' y1='1339.43' x2='956.25' y2='1339.43' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='904.63' y1='1350.79' x2='961.99' y2='1350.79' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='772.70' y1='1362.14' x2='887.42' y2='1362.14' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<line x1='761.23' y1='1373.50' x2='950.51' y2='1373.50' style='stroke-width: 3.20; stroke: #333333; stroke-linecap: butt;' />
+<rect x='928.23' y='1337.23' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<polygon points='930.82,1353.27 935.79,1353.27 935.79,1348.30 930.82,1348.30 ' style='stroke-width: 0.71; stroke: none; fill: #333333;' />
+<rect x='827.85' y='1359.94' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<rect x='853.66' y='1371.29' width='4.41' height='4.41' style='stroke-width: 0.71; stroke: #333333; fill: #FFFFFF;' />
+<line x1='594.88' y1='1380.31' x2='594.88' y2='1332.62' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='657.98' y1='1380.31' x2='657.98' y2='1332.62' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<line x1='904.63' y1='1380.31' x2='904.63' y2='1332.62' style='stroke-width: 1.07; stroke: #8B0000; stroke-opacity: 0.50; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
 <text transform='translate(597.95,1374.67) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>FAOSTAT</text>
 <text transform='translate(661.05,1375.76) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>Landsat</text>
 <text transform='translate(907.70,1374.55) rotate(-90)' style='font-size: 12.80px;fill: #8B0000; font-family: "Liberation Sans";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Sentinel-2</text>
@@ -805,58 +804,59 @@
 <text x='818.59' y='1394.87' text-anchor='middle' style='font-size: 13.00px; font-family: "Liberation Sans";' textLength='28.94px' lengthAdjust='spacingAndGlyphs'>2000</text>
 <text x='875.95' y='1394.87' text-anchor='middle' style='font-size: 13.00px; font-family: "Liberation Sans";' textLength='28.94px' lengthAdjust='spacingAndGlyphs'>2010</text>
 <text x='933.31' y='1394.87' text-anchor='middle' style='font-size: 13.00px; font-family: "Liberation Sans";' textLength='28.94px' lengthAdjust='spacingAndGlyphs'>2020</text>
-<text x='1033.02' y='879.61' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='33.34px' lengthAdjust='spacingAndGlyphs'>HYDE</text>
-<text x='1033.02' y='868.04' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='30.69px' lengthAdjust='spacingAndGlyphs'>LUH2</text>
-<text x='1033.02' y='856.48' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='58.02px' lengthAdjust='spacingAndGlyphs'>Anthromes</text>
-<text x='1033.02' y='844.91' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='42.36px' lengthAdjust='spacingAndGlyphs'>HILDA+</text>
-<text x='1033.02' y='833.34' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='107.39px' lengthAdjust='spacingAndGlyphs'>LULC India Decadal</text>
-<text x='1033.02' y='821.77' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='63.36px' lengthAdjust='spacingAndGlyphs'>MapBiomas</text>
-<text x='1033.02' y='810.21' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='50.03px' lengthAdjust='spacingAndGlyphs'>China LC</text>
-<text x='1033.02' y='798.64' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='42.69px' lengthAdjust='spacingAndGlyphs'>DEA LC</text>
-<text x='1033.02' y='787.07' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='92.00px' lengthAdjust='spacingAndGlyphs'>USGS GFSAD30</text>
-<text x='1033.02' y='775.50' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='60.03px' lengthAdjust='spacingAndGlyphs'>LULC India</text>
-<text x='1033.02' y='763.94' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='64.70px' lengthAdjust='spacingAndGlyphs'>Canada ACI</text>
-<text x='1033.02' y='752.37' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='77.81px' lengthAdjust='spacingAndGlyphs'>DynamicWorld</text>
-<text x='1033.02' y='740.80' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='77.34px' lengthAdjust='spacingAndGlyphs'>EUCROPMAP</text>
-<text x='1033.02' y='1003.08' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='101.39px' lengthAdjust='spacingAndGlyphs'>Historical Cropland</text>
-<text x='1033.02' y='991.51' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='52.02px' lengthAdjust='spacingAndGlyphs'>EU Crops</text>
-<text x='1033.02' y='979.94' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='95.38px' lengthAdjust='spacingAndGlyphs'>Cultivated Tropics</text>
-<text x='1033.02' y='968.37' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='62.67px' lengthAdjust='spacingAndGlyphs'>GLAD GCC</text>
-<text x='1033.02' y='956.81' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='59.34px' lengthAdjust='spacingAndGlyphs'>AgroMAPS</text>
-<text x='1033.02' y='945.24' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='96.03px' lengthAdjust='spacingAndGlyphs'>USDA NASS CDL</text>
-<text x='1033.02' y='933.67' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='84.70px' lengthAdjust='spacingAndGlyphs'>Fallow Land EU</text>
-<text x='1033.02' y='922.11' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='26.44px' lengthAdjust='spacingAndGlyphs'>INTA</text>
-<text x='1033.02' y='910.54' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='75.38px' lengthAdjust='spacingAndGlyphs'>SEA Cropland</text>
-<text x='1033.02' y='898.97' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='57.36px' lengthAdjust='spacingAndGlyphs'>EuroCrops</text>
-<text x='1033.02' y='1057.14' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='78.05px' lengthAdjust='spacingAndGlyphs'>US Rangeland</text>
-<text x='1033.02' y='1045.57' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='28.66px' lengthAdjust='spacingAndGlyphs'>GPW</text>
-<text x='1033.02' y='1034.00' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='86.02px' lengthAdjust='spacingAndGlyphs'>CTIC Grassland</text>
-<text x='1033.02' y='1022.44' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='118.72px' lengthAdjust='spacingAndGlyphs'>Copernicus Grassland</text>
-<text x='1033.02' y='1122.77' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='34.44px' lengthAdjust='spacingAndGlyphs'>AGLW</text>
-<text x='1033.02' y='1111.20' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='106.00px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Livestock</text>
-<text x='1033.02' y='1099.63' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='70.02px' lengthAdjust='spacingAndGlyphs'>EU Livestock</text>
-<text x='1033.02' y='1088.07' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='26.44px' lengthAdjust='spacingAndGlyphs'>GLW</text>
-<text x='1033.02' y='1076.50' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='116.67px' lengthAdjust='spacingAndGlyphs'>EUROSTAT Livestock</text>
-<text x='1033.02' y='1234.67' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='36.02px' lengthAdjust='spacingAndGlyphs'>HLNID</text>
-<text x='1033.02' y='1223.10' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='102.70px' lengthAdjust='spacingAndGlyphs'>Productivity indices</text>
-<text x='1033.02' y='1211.53' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='118.03px' lengthAdjust='spacingAndGlyphs'>OECD Agro Indicators</text>
-<text x='1033.02' y='1199.97' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='142.06px' lengthAdjust='spacingAndGlyphs'>Cropping Intensity Change</text>
-<text x='1033.02' y='1188.40' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='54.67px' lengthAdjust='spacingAndGlyphs'>MIrAD-US</text>
-<text x='1033.02' y='1176.83' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='98.69px' lengthAdjust='spacingAndGlyphs'>EU Intensity Trend</text>
-<text x='1033.02' y='1165.26' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='142.66px' lengthAdjust='spacingAndGlyphs'>EUROSTAT Farm Intensity</text>
-<text x='1033.02' y='1153.70' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='117.41px' lengthAdjust='spacingAndGlyphs'>Copernicus Ploughing</text>
-<text x='1033.02' y='1142.13' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='79.36px' lengthAdjust='spacingAndGlyphs'>China Intensity</text>
-<text x='1033.02' y='1323.43' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='76.70px' lengthAdjust='spacingAndGlyphs'>EuropeAgriDB</text>
-<text x='1033.02' y='1311.87' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='104.00px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Nutrients</text>
-<text x='1033.02' y='1300.30' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='102.00px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Fertilizer</text>
-<text x='1033.02' y='1288.73' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='82.70px' lengthAdjust='spacingAndGlyphs'>Zhang Nitrogen</text>
-<text x='1033.02' y='1277.16' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='83.38px' lengthAdjust='spacingAndGlyphs'>Global Nitrogen</text>
-<text x='1033.02' y='1265.60' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='41.34px' lengthAdjust='spacingAndGlyphs'>HFUBC</text>
-<text x='1033.02' y='1254.03' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='123.36px' lengthAdjust='spacingAndGlyphs'>Nutrient &amp; Heavy Metal</text>
-<text x='1033.02' y='1377.50' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='127.34px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Pesticide use</text>
-<text x='1033.02' y='1365.93' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='70.00px' lengthAdjust='spacingAndGlyphs'>USGS PNSP</text>
-<text x='1033.02' y='1354.36' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='108.02px' lengthAdjust='spacingAndGlyphs'>PEST-CHEMGRIDS</text>
-<text x='1033.02' y='1342.79' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='115.34px' lengthAdjust='spacingAndGlyphs'>EUROSTAT Pesticide</text>
+<text x='1033.02' y='876.93' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='33.34px' lengthAdjust='spacingAndGlyphs'>HYDE</text>
+<text x='1033.02' y='865.58' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='30.69px' lengthAdjust='spacingAndGlyphs'>LUH2</text>
+<text x='1033.02' y='854.22' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='58.02px' lengthAdjust='spacingAndGlyphs'>Anthromes</text>
+<text x='1033.02' y='842.87' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='42.36px' lengthAdjust='spacingAndGlyphs'>HILDA+</text>
+<text x='1033.02' y='831.51' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='107.39px' lengthAdjust='spacingAndGlyphs'>LULC India Decadal</text>
+<text x='1033.02' y='820.16' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='63.36px' lengthAdjust='spacingAndGlyphs'>MapBiomas</text>
+<text x='1033.02' y='808.80' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='50.03px' lengthAdjust='spacingAndGlyphs'>China LC</text>
+<text x='1033.02' y='797.45' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='42.69px' lengthAdjust='spacingAndGlyphs'>DEA LC</text>
+<text x='1033.02' y='786.09' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='57.34px' lengthAdjust='spacingAndGlyphs'>GCG 2006</text>
+<text x='1033.02' y='774.74' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='60.03px' lengthAdjust='spacingAndGlyphs'>LULC India</text>
+<text x='1033.02' y='763.38' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='64.70px' lengthAdjust='spacingAndGlyphs'>Canada ACI</text>
+<text x='1033.02' y='752.03' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='77.81px' lengthAdjust='spacingAndGlyphs'>DynamicWorld</text>
+<text x='1033.02' y='740.67' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='77.34px' lengthAdjust='spacingAndGlyphs'>EUCROPMAP</text>
+<text x='1033.02' y='1009.58' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='101.39px' lengthAdjust='spacingAndGlyphs'>Historical Cropland</text>
+<text x='1033.02' y='998.23' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='52.02px' lengthAdjust='spacingAndGlyphs'>EU Crops</text>
+<text x='1033.02' y='986.87' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='95.38px' lengthAdjust='spacingAndGlyphs'>Cultivated Tropics</text>
+<text x='1033.02' y='975.52' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='62.67px' lengthAdjust='spacingAndGlyphs'>GLAD GCC</text>
+<text x='1033.02' y='964.16' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='59.34px' lengthAdjust='spacingAndGlyphs'>AgroMAPS</text>
+<text x='1033.02' y='952.81' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='96.03px' lengthAdjust='spacingAndGlyphs'>USDA NASS CDL</text>
+<text x='1033.02' y='941.46' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='92.00px' lengthAdjust='spacingAndGlyphs'>USGS GFSAD30</text>
+<text x='1033.02' y='930.10' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='84.70px' lengthAdjust='spacingAndGlyphs'>Fallow Land EU</text>
+<text x='1033.02' y='918.75' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='26.44px' lengthAdjust='spacingAndGlyphs'>INTA</text>
+<text x='1033.02' y='907.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='75.38px' lengthAdjust='spacingAndGlyphs'>SEA Cropland</text>
+<text x='1033.02' y='896.04' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='57.36px' lengthAdjust='spacingAndGlyphs'>EuroCrops</text>
+<text x='1033.02' y='1062.75' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='78.05px' lengthAdjust='spacingAndGlyphs'>US Rangeland</text>
+<text x='1033.02' y='1051.40' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='28.66px' lengthAdjust='spacingAndGlyphs'>GPW</text>
+<text x='1033.02' y='1040.04' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='86.02px' lengthAdjust='spacingAndGlyphs'>CTIC Grassland</text>
+<text x='1033.02' y='1028.69' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='118.72px' lengthAdjust='spacingAndGlyphs'>Copernicus Grassland</text>
+<text x='1033.02' y='1127.28' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='34.44px' lengthAdjust='spacingAndGlyphs'>AGLW</text>
+<text x='1033.02' y='1115.92' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='106.00px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Livestock</text>
+<text x='1033.02' y='1104.57' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='70.02px' lengthAdjust='spacingAndGlyphs'>EU Livestock</text>
+<text x='1033.02' y='1093.21' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='26.44px' lengthAdjust='spacingAndGlyphs'>GLW</text>
+<text x='1033.02' y='1081.86' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='116.67px' lengthAdjust='spacingAndGlyphs'>EUROSTAT Livestock</text>
+<text x='1033.02' y='1237.22' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='36.02px' lengthAdjust='spacingAndGlyphs'>HLNID</text>
+<text x='1033.02' y='1225.87' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='102.70px' lengthAdjust='spacingAndGlyphs'>Productivity indices</text>
+<text x='1033.02' y='1214.51' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='118.03px' lengthAdjust='spacingAndGlyphs'>OECD Agro Indicators</text>
+<text x='1033.02' y='1203.16' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='142.06px' lengthAdjust='spacingAndGlyphs'>Cropping Intensity Change</text>
+<text x='1033.02' y='1191.80' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='54.67px' lengthAdjust='spacingAndGlyphs'>MIrAD-US</text>
+<text x='1033.02' y='1180.45' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='98.69px' lengthAdjust='spacingAndGlyphs'>EU Intensity Trend</text>
+<text x='1033.02' y='1169.09' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='142.66px' lengthAdjust='spacingAndGlyphs'>EUROSTAT Farm Intensity</text>
+<text x='1033.02' y='1157.74' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='117.41px' lengthAdjust='spacingAndGlyphs'>Copernicus Ploughing</text>
+<text x='1033.02' y='1146.38' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='79.36px' lengthAdjust='spacingAndGlyphs'>China Intensity</text>
+<text x='1033.02' y='1324.46' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='76.70px' lengthAdjust='spacingAndGlyphs'>EuropeAgriDB</text>
+<text x='1033.02' y='1313.10' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='104.00px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Nutrients</text>
+<text x='1033.02' y='1301.75' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='102.00px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Fertilizer</text>
+<text x='1033.02' y='1290.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='82.70px' lengthAdjust='spacingAndGlyphs'>Zhang Nitrogen</text>
+<text x='1033.02' y='1279.04' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='83.38px' lengthAdjust='spacingAndGlyphs'>Global Nitrogen</text>
+<text x='1033.02' y='1267.68' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='41.34px' lengthAdjust='spacingAndGlyphs'>HFUBC</text>
+<text x='1033.02' y='1256.33' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='123.36px' lengthAdjust='spacingAndGlyphs'>Nutrient &amp; Heavy Metal</text>
+<text x='1033.02' y='1377.62' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='127.34px' lengthAdjust='spacingAndGlyphs'>FAOSTAT Pesticide use</text>
+<text x='1033.02' y='1366.27' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='70.00px' lengthAdjust='spacingAndGlyphs'>USGS PNSP</text>
+<text x='1033.02' y='1354.91' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='108.02px' lengthAdjust='spacingAndGlyphs'>PEST-CHEMGRIDS</text>
+<text x='1033.02' y='1343.56' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='115.34px' lengthAdjust='spacingAndGlyphs'>EUROSTAT Pesticide</text>
 <text x='746.89' y='1418.42' text-anchor='middle' style='font-size: 15.00px; font-weight: bold; font-family: "Liberation Sans";' textLength='31.70px' lengthAdjust='spacingAndGlyphs'>Year</text>
 <text x='531.79' y='721.45' style='font-size: 15.00px; font-weight: bold; font-family: "Liberation Sans";' textLength='96.48px' lengthAdjust='spacingAndGlyphs'>   Time Series</text>
 <text x='514.21' y='715.98' style='font-size: 24.00px; font-weight: bold; font-family: "Liberation Sans";' textLength='14.66px' lengthAdjust='spacingAndGlyphs'>d</text>
