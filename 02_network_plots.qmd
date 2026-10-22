@@ -26,7 +26,13 @@ MIN_LABEL_DEG_DATASET <- 1L
 ```{r load-processed-data}
 # Load resolved lineage links computed in 01_data_prep.qmd
 links <- read_csv(here("data", "processed", "network_links.csv"), show_col_types = FALSE) |>
-    mutate(dataset_group = factor(dataset_group, levels = names(category_colors)))
+    mutate(
+        input_type = case_when(
+            input_type == "In Situ & Survey Data" ~ "Ground-truth Data",
+            TRUE ~ input_type
+        ),
+        dataset_group = factor(dataset_group, levels = names(category_colors))
+    )
 
 if (nrow(links) == 0) {
     stop("No lineage links found. Run 01_data_prep.qmd first.")
@@ -101,7 +107,7 @@ for (grp in dataset_groups) {
     }
 }
 
-for (tp in c("Remotely Sensed", "In Situ & Survey Data")) {
+for (tp in c("Remotely Sensed", "Ground-truth Data")) {
     type_id <- paste0("type::", tp)
     vertices[[length(vertices) + 1]] <- tibble(
         name = type_id, node_kind = "branch", input_type = tp,
@@ -144,7 +150,7 @@ tg <- tbl_graph(nodes = vertices_df, edges = hierarchy, directed = TRUE) |>
     mutate(
         node_color = case_when(
             node_kind == "source" & input_type == "Remotely Sensed" ~ bundle_palette["Remotely Sensed"],
-            node_kind == "source" & input_type == "In Situ & Survey Data" ~ bundle_palette["In Situ & Survey Data"],
+            node_kind == "source" & input_type == "Ground-truth Data" ~ bundle_palette["Ground-truth Data"],
             node_kind == "dataset" ~ pal_ds[dataset_group],
             TRUE ~ bundle_palette["node_default"]
         ),
@@ -238,7 +244,7 @@ from_idx <- match(conn_edges$from, igraph::V(tg)$name)
 to_idx <- match(conn_edges$to, igraph::V(tg)$name)
 
 idx_remote <- which(conn_edges$input_type == "Remotely Sensed")
-idx_stat <- which(conn_edges$input_type == "In Situ & Survey Data")
+idx_stat <- which(conn_edges$input_type == "Ground-truth Data")
 ```
 
 ## Render Network Plot
@@ -251,7 +257,7 @@ p <- ggraph(lay) +
     ) +
     geom_conn_bundle(
         data = get_con(from = from_idx[idx_stat], to = to_idx[idx_stat]),
-        color = bundle_palette["In Situ & Survey Data"], alpha = 0.4, linewidth = 0.7, tension = 0.8
+        color = bundle_palette["Ground-truth Data"], alpha = 0.4, linewidth = 0.7, tension = 0.8
     ) +
     geom_node_point(
         aes(filter = is_leaf, size = degree, color = I(node_color)),
@@ -340,7 +346,7 @@ for (grp in dataset_groups_exp) {
     }
 }
 
-for (tp in c("Remotely Sensed", "In Situ & Survey Data")) {
+for (tp in c("Remotely Sensed", "Ground-truth Data")) {
     type_id <- paste0("type::", tp)
     vertices_exp[[length(vertices_exp) + 1]] <- tibble(name = type_id, node_kind = "branch", input_type = tp, dataset_group = NA_character_, label = tp, is_leaf = FALSE)
     hier_edges_exp[[length(hier_edges_exp) + 1]] <- tibble(from = "branch::inputs", to = type_id)
@@ -367,7 +373,7 @@ tg_exp <- tbl_graph(nodes = vertices_df_exp, edges = hierarchy_exp, directed = T
     mutate(
         node_color = case_when(
             node_kind == "source" & input_type == "Remotely Sensed" ~ bundle_palette["Remotely Sensed"],
-            node_kind == "source" & input_type == "In Situ & Survey Data" ~ bundle_palette["In Situ & Survey Data"],
+            node_kind == "source" & input_type == "Ground-truth Data" ~ bundle_palette["Ground-truth Data"],
             node_kind == "dataset" ~ pal_ds[dataset_group],
             TRUE ~ bundle_palette["node_default"]
         ),
@@ -453,7 +459,7 @@ lay_exp$y[lay_exp$name == "branch::datasets"] <- 0
 from_idx_exp <- match(conn_edges_exp$from, igraph::V(tg_exp)$name)
 to_idx_exp <- match(conn_edges_exp$to, igraph::V(tg_exp)$name)
 idx_remote_exp <- which(conn_edges_exp$input_type == "Remotely Sensed")
-idx_stat_exp <- which(conn_edges_exp$input_type == "In Situ & Survey Data")
+idx_stat_exp <- which(conn_edges_exp$input_type == "Ground-truth Data")
 
 p_exp <- ggraph(lay_exp) +
     geom_conn_bundle(
@@ -462,7 +468,7 @@ p_exp <- ggraph(lay_exp) +
     ) +
     geom_conn_bundle(
         data = get_con(from = from_idx_exp[idx_stat_exp], to = to_idx_exp[idx_stat_exp]),
-        color = bundle_palette["In Situ & Survey Data"], alpha = 0.4, linewidth = 0.7, tension = 0.8
+        color = bundle_palette["Ground-truth Data"], alpha = 0.4, linewidth = 0.7, tension = 0.8
     ) +
     geom_node_point(
         aes(filter = is_leaf, size = degree, color = I(node_color)),
@@ -626,14 +632,14 @@ metric_order <- metric_proportions |>
 p_prop <- metric_proportions |>
     mutate(
         dataset_group = factor(dataset_group, levels = metric_order),
-        input_type = factor(input_type, levels = c("In Situ & Survey Data", "Remotely Sensed"))
+        input_type = factor(input_type, levels = c("Ground-truth Data", "Remotely Sensed"))
     ) |>
     ggplot(aes(x = Percentage, y = dataset_group, fill = input_type)) +
     geom_col(width = 0.65) +
     scale_fill_manual(
-        values = c("Remotely Sensed" = unname(bundle_palette["Remotely Sensed"]), "In Situ & Survey Data" = unname(bundle_palette["In Situ & Survey Data"])),
+        values = c("Remotely Sensed" = unname(bundle_palette["Remotely Sensed"]), "Ground-truth Data" = unname(bundle_palette["Ground-truth Data"])),
         name = "Input Type",
-        breaks = c("Remotely Sensed", "In Situ & Survey Data")
+        breaks = c("Remotely Sensed", "Ground-truth Data")
     ) +
     scale_x_continuous(expand = c(0, 0)) +
     labs(x = "Percentage of Total Dataset Connections (%)", y = "") +

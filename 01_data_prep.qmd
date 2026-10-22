@@ -32,7 +32,7 @@ all_deps <- df_sorted |>
     mutate(
         input_type = case_when(
             input_field == "inputRemote" ~ "Remotely Sensed",
-            input_field == "inputStat" ~ "In Situ & Survey Data",
+            input_field == "inputStat" ~ "Ground-truth Data",
             input_field == "inputMap" ~ "Map",
             TRUE ~ NA_character_
         )
@@ -54,9 +54,9 @@ agri_targets <- df_sorted |>
     select(dataset = nameShort, dataset_group)
 
 # 3. Resolve Transitive Dependencies
-# Direct links (Remotely Sensed and In Situ & Survey Data)
+# Direct links (Remotely Sensed and Ground-truth Data)
 direct_rs <- all_deps |>
-    filter(target %in% agri_targets$dataset, input_type %in% c("Remotely Sensed", "In Situ & Survey Data")) |>
+    filter(target %in% agri_targets$dataset, input_type %in% c("Remotely Sensed", "Ground-truth Data")) |>
     rename(dataset = target)
 
 # Indirect dependencies via inputMaps
@@ -65,7 +65,7 @@ direct_maps <- all_deps |>
     rename(dataset = target)
 
 map_sources <- all_deps |>
-    filter(target %in% direct_maps$source, input_type %in% c("Remotely Sensed", "In Situ & Survey Data"))
+    filter(target %in% direct_maps$source, input_type %in% c("Remotely Sensed", "Ground-truth Data"))
 
 # Link map usage back to base sources
 transitive_rs <- direct_maps |>

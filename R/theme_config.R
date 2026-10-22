@@ -31,6 +31,7 @@ scale_color_category <- function() {
 # Network Edge Bundling colors
 bundle_palette <- c(
   "Remotely Sensed" = "#1F7A8C",
+  "Ground-truth Data" = "#C1663C",
   "In Situ & Survey Data" = "#C1663C",
   node_default = "#BDBDBD",
   text_dark = "#333333"

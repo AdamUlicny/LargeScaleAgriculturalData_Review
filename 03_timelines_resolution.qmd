@@ -92,10 +92,10 @@ p_timeline_snapshot <- ggplot(df_timeline_snapshot, aes(y = nameShort)) +
     geom_tile(aes(x = 1987.5, width = 75, fill = Category)) +
     geom_point(aes(x = plotStart, shape = dataType), color = "#333333", fill = "white", size = 3) +
     scale_fill_category() +
-    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type") +
+    scale_shape_manual(values = c("raster" = 18, "vector" = 8), name = "Data Type") +
     coord_cartesian(xlim = c(1950, 2025)) +
     geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "darkred", alpha = 0.5) +
-    geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "darkred", size = 4.5, inherit.aes = FALSE) +
+    geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "white", size = 4.5, inherit.aes = FALSE) +
     scale_x_continuous(
         breaks = seq(1950, 2025, by = 5),
         labels = ~ if_else(.x %% 10 == 0, as.character(.x), ""),
@@ -160,11 +160,11 @@ p_timeline_series <- ggplot(df_timeline, aes(y = nameShort)) +
     ) +
     geom_point(aes(x = (plotStart + plotEnd) / 2, shape = dataType), color = "#333333", fill = "white", size = 2) +
     scale_fill_category() +
-    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type", guide = guide_legend(order = 3)) +
+    scale_shape_manual(values = c("raster" = 18, "vector" = 8), name = "Data Type", guide = guide_legend(order = 3)) +
     scale_y_discrete(position = "right") +
     coord_cartesian(xlim = c(1950, 2025)) +
-    geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "darkred", alpha = 0.5) +
-    geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "darkred", size = 4.5, inherit.aes = FALSE) +
+    geom_vline(data = df_events, aes(xintercept = Year), linetype = "dashed", color = "white", alpha = 0.5) +
+    geom_text(data = df_events, aes(x = Year - 1, y = -Inf, label = Label), angle = 90, hjust = -0.1, vjust = 1, color = "white", size = 4.5, inherit.aes = FALSE) +
     scale_x_continuous(
         breaks = seq(1950, 2025, by = 5),
         labels = ~ if_else(.x %% 10 == 0, as.character(.x), ""),
@@ -187,7 +187,7 @@ p_timeline_series <- ggplot(df_timeline, aes(y = nameShort)) +
         strip.placement = "outside"
     )
 
-# 3. Prepare Scatterplot for Panel A
+# 3. Prepare Scatterplot for Panel B
 df_scatter <- df_agri |>
     mutate(timespan = temporalEnd - temporalStart) |>
     filter(timespan <= 100, !is.na(timespan), !is.na(resolutionKm)) |>
@@ -196,7 +196,7 @@ df_scatter <- df_agri |>
 p_scatter <- ggplot(df_scatter, aes(x = plot_timespan, y = resolutionKm, color = Category, shape = dataType)) +
     geom_point(size = 3.5, alpha = 0.8, fill = "white") +
     scale_color_category() +
-    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type") +
+    scale_shape_manual(values = c("raster" = 18, "vector" = 8), name = "Data Type") +
     scale_x_log10(breaks = c(0.5, 1, 5, 10, 20, 50, 100), labels = c("Snapshot", "1", "5", "10", "20", "50", "100")) +
     scale_y_log10(
         breaks = c(0.01, 0.03, 0.1, 0.25, 0.5, 1, 5, 10, 50, 100, 600),
@@ -230,16 +230,16 @@ p_leg_col1 <- ggplot(dummy_col1) +
     geom_segment(aes(x = 1, xend = 2, y = 1, yend = 1), linetype = "solid", linewidth = 1.5, color = "#333333") +
     geom_point(aes(x = 1.5, y = 1, shape = dtype), size = 3, color = "#333333", fill = "white") +
     scale_fill_category() +
-    scale_shape_manual(values = c("raster" = 15, "vector" = 22), name = "Data Type", drop = FALSE, guide = guide_legend(order = 2)) +
+    scale_shape_manual(values = c("raster" = 18, "vector" = 8), name = "Data Type", drop = FALSE, guide = guide_legend(order = 2)) +
     theme_publication() +
     theme(
         legend.position = "right",
         legend.justification = c(0, 1),
         legend.box = "vertical",
         legend.margin = margin(t = 0),
-        legend.text = element_text(size = 13),
-        legend.title = element_text(size = 15, face = "bold"),
-        legend.key.size = unit(1.3, "lines")
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14, face = "bold"),
+        legend.key.size = unit(1.1, "lines")
     )
 
 shared_legend <- cowplot::get_legend(p_leg_col1)
@@ -251,18 +251,23 @@ p_timeline_series_clean <- p_timeline_series + theme(legend.position = "none")
 p_timeline_snapshot_clean <- p_timeline_snapshot + theme(legend.position = "none")
 
 # Layout parameters
-scatter_x <- 0.02
-scatter_y <- 0.55
-scatter_w <- 0.40
-scatter_h <- 0.40
-bar_x <- 0.44
+bar_x <- 0.02
 bar_y <- 0.55
-bar_w <- 0.36
+bar_w <- 0.40
 bar_h <- 0.40
-leg_x <- 0.81
-leg_y <- 0.55
+
+# Inlaid legend in panel a upper right
+leg_x <- 0.22
+leg_y <- 0.65
 leg_w <- 0.18
-leg_h <- 0.40
+leg_h <- 0.30
+
+# Scatterplot expanded across remaining width, matching panel d
+scatter_x <- 0.44
+scatter_y <- 0.55
+scatter_w <- 0.54
+scatter_h <- 0.40
+
 snap_x <- 0.02
 snap_y <- 0.00
 snap_w <- 0.40
@@ -273,11 +278,11 @@ ts_w <- 0.54
 ts_h <- 0.52
 
 combined_plot <- ggdraw() +
-    draw_plot(p_scatter_clean, x = scatter_x, y = scatter_y, width = scatter_w, height = scatter_h) +
-    draw_plot_label("a", x = 0.02, y = scatter_y + scatter_h, size = 24, fontface = "bold") +
     draw_plot(p_combined_bar_clean, x = bar_x, y = bar_y, width = bar_w, height = bar_h) +
-    draw_plot_label("b", x = bar_x, y = bar_y + bar_h, size = 24, fontface = "bold") +
+    draw_plot_label("a", x = bar_x, y = bar_y + bar_h, size = 24, fontface = "bold") +
     draw_plot(shared_legend, x = leg_x, y = leg_y, width = leg_w, height = leg_h) +
+    draw_plot(p_scatter_clean, x = scatter_x, y = scatter_y, width = scatter_w, height = scatter_h) +
+    draw_plot_label("b", x = scatter_x, y = scatter_y + scatter_h, size = 24, fontface = "bold") +
     draw_plot(p_timeline_snapshot_clean, x = snap_x, y = snap_y, width = snap_w, height = snap_h) +
     draw_plot_label("c", x = snap_x, y = snap_y + snap_h, size = 24, fontface = "bold") +
     draw_plot(p_timeline_series_clean, x = ts_x, y = ts_y, width = ts_w, height = ts_h) +
@@ -342,7 +347,7 @@ panel_b_total <- df_summary |>
 panel_b_stats <- bind_rows(panel_b_each, panel_b_total) |>
     arrange(continent == "All Continents Combined", continent, desc(n))
 
-kable(panel_b_stats, caption = "Panel B: Dataset Distribution by Continent")
+kable(panel_b_stats, caption = "Panel A: Dataset Distribution by Continent")
 
 panel_c_stats <- df_timeline_snapshot |>
     summarise(

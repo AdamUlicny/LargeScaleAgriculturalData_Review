@@ -27,7 +27,7 @@ links <- read_csv(here("data", "processed", "network_links.csv"), show_col_types
 
 # Filter out National Statistics and convert to wide binary matrix
 dataset_resolved_wide <- links |>
-  filter(!(input_type == "In Situ & Survey Data" & source == "National Statistics")) |>
+  filter(!(input_type %in% c("In Situ & Survey Data", "Ground-truth Data") & source == "National Statistics")) |>
   distinct(dataset, source) |>
   mutate(present = 1) |>
   pivot_wider(
