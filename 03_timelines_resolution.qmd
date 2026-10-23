@@ -107,7 +107,7 @@ p_timeline_snapshot <- ggplot(df_timeline_snapshot, aes(y = nameShort)) +
     theme(
         plot.title = element_text(size = 15, face = "bold", margin = margin(b = 5)),
         panel.grid.minor = element_blank(),
-        axis.text.y = element_text(size = 12, color = "black"),
+        axis.text.y = element_text(size = 12, color = "black", hjust = 1, margin = margin(r = 5)),
         axis.text.x = element_text(size = 13, color = "black"),
         axis.title.x = element_text(size = 15, face = "bold", margin = margin(t = 10)),
         axis.line.x = element_line(color = "black"),
@@ -176,7 +176,7 @@ p_timeline_series <- ggplot(df_timeline, aes(y = nameShort)) +
     theme(
         plot.title = element_text(size = 15, face = "bold", margin = margin(b = 5)),
         panel.grid.minor = element_blank(),
-        axis.text.y = element_text(size = 12, color = "black"),
+        axis.text.y = element_text(size = 12, color = "black", hjust = 0, margin = margin(l = 5)),
         axis.text.x = element_text(size = 13, color = "black"),
         axis.title.x = element_text(size = 15, face = "bold", margin = margin(t = 10)),
         axis.line.x = element_line(color = "black"),
@@ -210,8 +210,8 @@ p_scatter <- ggplot(df_scatter, aes(x = plot_timespan, y = resolutionKm, color =
         axis.line = element_line(color = "black"),
         axis.ticks = element_line(color = "black"),
         axis.ticks.length = unit(4, "pt"),
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 13, color = "black"),
-        axis.text.y = element_text(size = 13, color = "black"),
+        axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, margin = margin(t = 2), size = 13, color = "black"),
+        axis.text.y = element_text(size = 13, color = "black", hjust = 1),
         axis.title = element_text(size = 15, face = "bold"),
         axis.title.y = element_text(angle = 90, margin = margin(r = 10)),
         legend.position = "none"
@@ -236,6 +236,9 @@ p_leg_col1 <- ggplot(dummy_col1) +
         legend.position = "right",
         legend.justification = c(0, 1),
         legend.box = "vertical",
+        legend.background = element_rect(fill = "white", color = NA),
+        legend.box.background = element_rect(color = "black", fill = "white", linewidth = 0.5),
+        legend.box.margin = margin(6, 8, 6, 8),
         legend.margin = margin(t = 0),
         legend.text = element_text(size = 12),
         legend.title = element_text(size = 14, face = "bold"),
