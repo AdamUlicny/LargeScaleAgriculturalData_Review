@@ -1,7 +1,7 @@
 # Large-Scale Agricultural Data Review
 
 ## Authors
-- Adam Uličný
+*Anonymized for double-blind peer review*
 
 ## Description
 This repository contains code, data, and visualization pipelines for the review of large-scale agricultural datasets. It includes data preparation, network lineage resolution (hierarchical edge bundling), spatial/temporal resolution timelines, and hierarchical dataset clustering.
@@ -43,6 +43,6 @@ Shared graphical themes and palettes are defined in `R/theme_config.R`.
 This repository is licensed under the [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
 
 ### Citation
-If you use this dataset or code, please cite it as follows:
+Citation details and persistent repository identifiers will be provided following double-blind peer review:
 
-> Uličný, A. (Year). *Title of Scientific Publication / Review*. [Preprint / Journal Article / Zenodo Repository]. DOI: [INSERT_DOI_OR_URL_HERE] - will be updated when Zenodo repo is ready!
+> [Author(s) blinded for peer review] (Year). *Large-Scale Agricultural Data Review*. DOI: [Will be updated post-review].
